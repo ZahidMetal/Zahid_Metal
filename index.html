@@ -3,149 +3,230 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zahid Metal - হস্তশিল্পের দোকান</title>
+
+  <title>Zahid Metal</title>
 
   <style>
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, "Noto Sans Bengali", sans-serif;
-      background: #f7f7f7;
+      background: #f5f5f5;
       color: #222;
     }
 
+    /* Header */
     header {
-      background: #222;
+      background: #171717;
       color: white;
-      padding: 22px 15px;
       text-align: center;
+      padding: 35px 15px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 32px;
+      font-size: 42px;
     }
 
     header p {
-      margin: 8px 0 0;
-    }
-
-    nav {
-      background: white;
-      padding: 12px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #222;
-      margin: 0 12px;
-      font-weight: bold;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 55px 20px;
-      background: white;
-    }
-
-    .hero h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
+      margin: 12px 0 0;
       font-size: 18px;
     }
 
-    .section-title {
+    /* Navigation */
+    nav {
+      background: white;
       text-align: center;
-      margin: 35px 0 20px;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.12);
     }
 
+    nav a {
+      color: #222;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 14px;
+    }
+
+    nav a:hover {
+      color: #b00000;
+    }
+
+    /* Hero */
+    .hero {
+      background: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      margin: 0 0 15px;
+    }
+
+    .hero p {
+      font-size: 19px;
+      margin-bottom: 25px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: #b00000;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    /* Section */
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin: 45px 0 25px;
+    }
+
+    /* Products */
     .products {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      padding: 20px;
+      gap: 25px;
+      padding: 10px 25px 40px;
     }
 
     .product {
       background: white;
-      width: 270px;
+      width: 280px;
+      border-radius: 15px;
       padding: 20px;
-      border-radius: 12px;
       text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      transition: 0.2s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
     }
 
     .product-image {
-      height: 170px;
+      height: 180px;
+      border-radius: 12px;
       background: #eeeeee;
-      border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 55px;
-      margin-bottom: 15px;
+      font-size: 60px;
+      margin-bottom: 18px;
     }
 
     .product h3 {
+      font-size: 20px;
       margin: 10px 0;
     }
 
-    .price {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 12px 0;
+    .product p {
+      color: #666;
     }
 
-    button {
-      background: #222;
+    .order-button {
+      display: inline-block;
+      background: #b00000;
       color: white;
+      text-decoration: none;
       border: none;
       padding: 12px 22px;
       border-radius: 7px;
       cursor: pointer;
       font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
-    button:hover {
-      background: #444;
+    .order-button:hover {
+      background: #800000;
     }
 
-    .contact {
+    /* Order Information */
+    .order-info {
       background: white;
+      max-width: 850px;
+      margin: 20px auto 50px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.10);
       text-align: center;
-      padding: 40px 20px;
-      margin-top: 30px;
     }
 
+    .order-info p {
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    /* Contact */
+    .contact {
+      background: #171717;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .contact h2 {
+      font-size: 30px;
+    }
+
+    .address {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .map-button {
+      display: inline-block;
+      margin-top: 15px;
+      background: white;
+      color: #222;
+      padding: 12px 22px;
+      border-radius: 7px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Footer */
     footer {
-      background: #222;
+      background: #0d0d0d;
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 30px;
     }
 
+    /* Mobile */
     @media (max-width: 600px) {
-      nav a {
-        display: inline-block;
-        margin: 6px;
+
+      header h1 {
+        font-size: 32px;
       }
 
       .hero h2 {
-        font-size: 26px;
+        font-size: 28px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 7px;
       }
 
       .product {
-        width: 90%;
+        width: 92%;
       }
     }
   </style>
@@ -153,78 +234,195 @@
 
 <body>
 
+  <!-- Header -->
   <header>
-    <h1>✨ Zahid Metal ✨</h1>
-    <p>সুন্দর ও আকর্ষণীয় হস্তশিল্পের পণ্য</p>
+    <h1>🏆 Zahid Metal</h1>
+    <p>All Kinds of Metallic & Wooden Gift Item</p>
   </header>
 
+
+  <!-- Navigation -->
   <nav>
-    <a href="#">হোম</a>
-    <a href="#products">আমাদের পণ্য</a>
+    <a href="#home">হোম</a>
+    <a href="#products">পণ্যসমূহ</a>
+    <a href="#order">অর্ডার</a>
     <a href="#contact">যোগাযোগ</a>
   </nav>
 
-  <section class="hero">
+
+  <!-- Hero -->
+  <section class="hero" id="home">
     <h2>স্বাগতম Zahid Metal-এ ❤️</h2>
-    <p>আপনার পছন্দের হস্তশিল্পের পণ্য সহজেই অর্ডার করুন।</p>
+
+    <p>
+      সুন্দর ও মানসম্মত ক্রেস্ট এবং গিফট আইটেমের জন্য
+      আমাদের সাথে যোগাযোগ করুন।
+    </p>
+
+    <a class="hero-button" href="#products">
+      আমাদের পণ্য দেখুন
+    </a>
   </section>
 
-  <h2 class="section-title" id="products">🛍️ আমাদের পণ্য</h2>
+
+  <!-- Products -->
+  <h2 class="section-title" id="products">
+    🏆 আমাদের ক্রেস্ট
+  </h2>
 
   <section class="products">
 
+    <!-- Product 1 -->
     <div class="product">
-      <div class="product-image">🎨</div>
-      <h3>মেটাল ওয়াল ডেকোর</h3>
-      <p>সুন্দর ঘর সাজানোর পণ্য</p>
-      <div class="price">মূল্য: ৫০০ টাকা</div>
-      <button onclick="order('মেটাল ওয়াল ডেকোর')">
+      <div class="product-image">🏆</div>
+
+      <h3>কাঠের ক্রেস্ট বক্সসহ</h3>
+
+      <p>
+        সুন্দর ডিজাইনের কাঠের ক্রেস্ট বক্সসহ।
+      </p>
+
+      <a
+        class="order-button"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
+        target="_blank">
         অর্ডার করুন
-      </button>
+      </a>
     </div>
 
+
+    <!-- Product 2 -->
     <div class="product">
-      <div class="product-image">🌸</div>
-      <h3>মেটাল ফুলের ডেকোর</h3>
-      <p>ঘর সাজানোর আকর্ষণীয় ডিজাইন</p>
-      <div class="price">মূল্য: ৬০০ টাকা</div>
-      <button onclick="order('মেটাল ফুলের ডেকোর')">
+      <div class="product-image">🎁</div>
+
+      <h3>কাঠের ক্রেস্ট ভেলভেট বক্সসহ</h3>
+
+      <p>
+        আকর্ষণীয় ভেলভেট বক্সসহ কাঠের ক্রেস্ট।
+      </p>
+
+      <a
+        class="order-button"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
+        target="_blank">
         অর্ডার করুন
-      </button>
+      </a>
     </div>
 
+
+    <!-- Product 3 -->
     <div class="product">
-      <div class="product-image">🔑</div>
-      <h3>মেটাল কী-হোল্ডার</h3>
-      <p>সুন্দর ও ব্যবহারযোগ্য পণ্য</p>
-      <div class="price">মূল্য: ৩৫০ টাকা</div>
-      <button onclick="order('মেটাল কী-হোল্ডার')">
+      <div class="product-image">⭐</div>
+
+      <h3>কাঠের ভিআইপি ক্রেস্ট বক্সসহ</h3>
+
+      <p>
+        বিশেষ অনুষ্ঠানের জন্য ভিআইপি ক্রেস্ট।
+      </p>
+
+      <a
+        class="order-button"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
+        target="_blank">
         অর্ডার করুন
-      </button>
+      </a>
+    </div>
+
+
+    <!-- Product 4 -->
+    <div class="product">
+      <div class="product-image">🏅</div>
+
+      <h3>কাঠের অ্যাওয়ার্ড ক্রেস্ট</h3>
+
+      <p>
+        পুরস্কার ও সম্মাননার জন্য সুন্দর ক্রেস্ট।
+      </p>
+
+      <a
+        class="order-button"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
+        target="_blank">
+        অর্ডার করুন
+      </a>
+    </div>
+
+
+    <!-- Product 5 -->
+    <div class="product">
+      <div class="product-image">📦</div>
+
+      <h3>চায়না বক্স ক্রেস্ট</h3>
+
+      <p>
+        আকর্ষণীয় চায়না বক্সসহ ক্রেস্ট।
+      </p>
+
+      <a
+        class="order-button"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
+        target="_blank">
+        অর্ডার করুন
+      </a>
     </div>
 
   </section>
 
+
+  <!-- Order -->
+  <section id="order">
+
+    <h2 class="section-title">
+      🛒 অর্ডার করার নিয়ম
+    </h2>
+
+    <div class="order-info">
+
+      <p>
+        <b>অর্ডার করুন</b> বাটনে ক্লিক করে আমাদের অর্ডার ফর্ম পূরণ করুন।
+      </p>
+
+      <p>
+        আপনার নাম, মোবাইল নম্বর, ঠিকানা, পণ্যের নাম
+        এবং কতটি লাগবে তা লিখে অর্ডার পাঠাতে পারবেন।
+      </p>
+
+      <a
+        class="order-button"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
+        target="_blank">
+        🛒 অর্ডার ফর্ম খুলুন
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- Contact -->
   <section class="contact" id="contact">
-    <h2>📞 যোগাযোগ করুন</h2>
-    <p>অর্ডার বা যেকোনো তথ্যের জন্য আমাদের সাথে যোগাযোগ করুন।</p>
-    <p>📱 ফোন: আপনার ফোন নম্বর এখানে দিন</p>
+
+    <h2>📍 আমাদের ঠিকানা</h2>
+
+    <div class="address">
+      <b>৬০/বি/১ (আনন্দ শোপান মার্কেট)</b><br>
+      <b>পুরানা পল্টন, ঢাকা–১০০</b>
+    </div>
+
+    <a
+      class="map-button"
+      href="https://www.google.com/maps/search/?api=1&query=60%2FB%2F1%20Ananda%20Shopan%20Market%20Purana%20Paltan%20Dhaka%20100"
+      target="_blank">
+      📍 গুগল ম্যাপে লোকেশন দেখুন
+    </a>
+
   </section>
 
+
+  <!-- Footer -->
   <footer>
     <p>© ২০২৬ Zahid Metal — সর্বস্বত্ব সংরক্ষিত</p>
   </footer>
-
-  <script>
-    function order(productName) {
-      alert(
-        "✅ আপনার অর্ডারটি সফলভাবে গ্রহণ করা হয়েছে!\n\n" +
-        "পণ্য: " + productName + "\n\n" +
-        "আপনাকে ফোন করে মোট মূল্য, ডেলিভারি চার্জ, " +
-        "ডেলিভারির তারিখ এবং আনুমানিক সময় জানানো হবে।"
-      );
-    }
-  </script>
 
 </body>
 </html>
