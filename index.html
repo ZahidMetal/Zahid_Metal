@@ -74,7 +74,7 @@
     .hero {
       background: white;
       text-align: center;
-      padding: 70px 20px;
+      padding: 65px 20px;
     }
 
     .hero h2 {
@@ -85,6 +85,7 @@
     .hero p {
       font-size: 19px;
       margin-bottom: 25px;
+      line-height: 1.7;
     }
 
     .hero-button {
@@ -103,37 +104,95 @@
       margin: 45px 0 25px;
     }
 
+    /* CATEGORY */
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 20px 45px;
+    }
+
+    .category {
+      background: white;
+      width: 220px;
+      min-height: 150px;
+      border-radius: 15px;
+      padding: 25px 15px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      transition: 0.2s;
+    }
+
+    .category:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 7px 20px rgba(0,0,0,0.18);
+    }
+
+    .category-icon {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .category h3 {
+      margin: 5px 0;
+      font-size: 21px;
+    }
+
+    .category p {
+      color: #666;
+      margin: 8px 0 0;
+    }
+
+    /* PRODUCTS */
+
+    .category-products {
+      display: none;
+      padding: 10px 20px 45px;
+    }
+
+    .category-products.active {
+      display: block;
+    }
+
+    .back-button {
+      display: block;
+      margin: 0 auto 25px;
+      background: #171717;
+      color: white;
+      border: none;
+      padding: 11px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
     .products {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 25px;
-      padding: 10px 25px 40px;
     }
 
     .product {
       background: white;
       width: 280px;
       border-radius: 15px;
-      padding: 20px;
+      padding: 18px;
       text-align: center;
       box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-      transition: 0.2s;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
     }
 
     .product-image {
-      height: 180px;
+      width: 100%;
+      height: 190px;
+      object-fit: contain;
       border-radius: 12px;
       background: #eeeeee;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 60px;
-      margin-bottom: 18px;
+      cursor: zoom-in;
+      margin-bottom: 15px;
     }
 
     .product h3 {
@@ -143,25 +202,118 @@
 
     .product p {
       color: #666;
+      line-height: 1.6;
+    }
+
+    .price {
+      color: #b00000;
+      font-size: 21px;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    .details-button,
+    .order-button {
+      display: inline-block;
+      border: none;
+      padding: 11px 18px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .details-button {
+      background: #171717;
+      color: white;
     }
 
     .order-button {
-      display: inline-block;
       background: #b00000;
       color: white;
-      text-decoration: none;
-      border: none;
-      padding: 12px 22px;
-      border-radius: 7px;
-      cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
-      margin-top: 10px;
     }
 
     .order-button:hover {
       background: #800000;
     }
+
+    /* IMAGE ZOOM */
+
+    .image-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .image-modal img {
+      max-width: 95%;
+      max-height: 90%;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .close-image {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 40px;
+      cursor: pointer;
+    }
+
+    /* DETAILS MODAL */
+
+    .details-modal {
+      display: none;
+      position: fixed;
+      z-index: 900;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .details-box {
+      background: white;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      position: relative;
+    }
+
+    .details-box img {
+      width: 100%;
+      height: 230px;
+      object-fit: contain;
+      background: #eeeeee;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .close-details {
+      position: absolute;
+      right: 18px;
+      top: 10px;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    /* ORDER */
 
     .order-info {
       background: white;
@@ -175,8 +327,21 @@
 
     .order-info p {
       font-size: 17px;
-      line-height: 1.8;
+      line-height: 1.9;
     }
+
+    .notice {
+      background: #fff4f4;
+      border-left: 5px solid #b00000;
+      padding: 18px;
+      margin: 25px auto;
+      max-width: 700px;
+      text-align: left;
+      line-height: 1.8;
+      border-radius: 8px;
+    }
+
+    /* CONTACT */
 
     .contact {
       background: #171717;
@@ -236,6 +401,7 @@
     }
 
     @media (max-width: 600px) {
+
       header h1 {
         font-size: 32px;
       }
@@ -254,6 +420,10 @@
         margin: 7px;
       }
 
+      .category {
+        width: 92%;
+      }
+
       .product {
         width: 92%;
       }
@@ -263,64 +433,170 @@
 
 <body>
 
-  <header>
+<header>
 
-    <img
-      src="ChatGPT%20Image%20Sep%201,%202026,%2012_17_19%20AM.png"
-      alt="Zahid Metal Logo"
-      class="logo">
+  <img
+    src="ChatGPT%20Image%20Sep%201,%202026,%2012_17_19%20AM.png"
+    alt="Zahid Metal Logo"
+    class="logo">
 
-    <h1>🏆 Zahid Metal</h1>
+  <h1>🏆 Zahid Metal</h1>
 
-    <p>All Kinds of Metallic & Wooden Gift Item</p>
+  <p>All Kinds of Metallic & Wooden Gift Item</p>
 
-  </header>
+</header>
 
-  <nav>
-    <a href="#home">হোম</a>
-    <a href="#products">পণ্যসমূহ</a>
-    <a href="#order">অর্ডার</a>
-    <a href="#contact">যোগাযোগ</a>
-  </nav>
 
-  <section class="hero" id="home">
+<nav>
+  <a href="#home">হোম</a>
+  <a href="#categories">ক্যাটাগরি</a>
+  <a href="#order">অর্ডার</a>
+  <a href="#contact">যোগাযোগ</a>
+</nav>
 
-    <h2>স্বাগতম Zahid Metal-এ ❤️</h2>
 
-    <p>
-      সুন্দর ও মানসম্মত ক্রেস্ট এবং গিফট আইটেমের জন্য
-      আমাদের সাথে যোগাযোগ করুন।
-    </p>
+<section class="hero" id="home">
 
-    <a class="hero-button" href="#products">
-      আমাদের পণ্য দেখুন
-    </a>
+  <h2>স্বাগতম Zahid Metal-এ ❤️</h2>
 
-  </section>
+  <p>
+    সুন্দর ও মানসম্মত ক্রেস্ট, অ্যাওয়ার্ড,
+    গিফট আইটেম ও কাঠের পণ্যের জন্য
+    আমাদের সাথে যোগাযোগ করুন।
+  </p>
 
-  <h2 class="section-title" id="products">
-    🏆 আমাদের ক্রেস্ট
-  </h2>
+  <a class="hero-button" href="#categories">
+    আমাদের পণ্য দেখুন
+  </a>
 
-  <section class="products">
+</section>
+
+
+<h2 class="section-title" id="categories">
+  🛍️ আমাদের ক্যাটাগরি
+</h2>
+
+
+<section class="categories">
+
+  <div class="category" onclick="showCategory('crest')">
+    <div class="category-icon">🏆</div>
+    <h3>ক্রেস্ট</h3>
+    <p>সব ধরনের ক্রেস্ট</p>
+  </div>
+
+  <div class="category" onclick="showCategory('gift')">
+    <div class="category-icon">🎁</div>
+    <h3>গিফট আইটেম</h3>
+    <p>সুন্দর গিফট পণ্য</p>
+  </div>
+
+  <div class="category" onclick="showCategory('wood')">
+    <div class="category-icon">🪵</div>
+    <h3>কাঠের পণ্য</h3>
+    <p>কাঠের তৈরি পণ্য</p>
+  </div>
+
+  <div class="category" onclick="showCategory('award')">
+    <div class="category-icon">🥇</div>
+    <h3>অ্যাওয়ার্ড</h3>
+    <p>পুরস্কার ও সম্মাননা</p>
+  </div>
+
+  <div class="category" onclick="showCategory('box')">
+    <div class="category-icon">📦</div>
+    <h3>বক্স</h3>
+    <p>বিভিন্ন ধরনের বক্স</p>
+  </div>
+
+</section>
+
+
+<!-- CREST -->
+
+<section class="category-products" id="crest">
+
+  <h2 class="section-title">🏆 ক্রেস্ট</h2>
+
+  <button class="back-button" onclick="backToCategories()">
+    ← সব ক্যাটাগরি
+  </button>
+
+  <div class="products">
 
     <div class="product">
-      <div class="product-image">🏆</div>
+
+      <img
+        class="product-image"
+        src="https://placehold.co/600x400?text=Crest"
+        alt="কাঠের ক্রেস্ট"
+        onclick="zoomImage(this.src)">
+
       <h3>কাঠের ক্রেস্ট বক্সসহ</h3>
+
       <p>সুন্দর ডিজাইনের কাঠের ক্রেস্ট বক্সসহ।</p>
 
+      <div class="price">৳ 500</div>
+
+      <button
+        class="details-button"
+        onclick="showDetails(
+        'কাঠের ক্রেস্ট বক্সসহ',
+        'https://placehold.co/600x400?text=Crest',
+        'সুন্দর ডিজাইনের কাঠের ক্রেস্ট। বক্সসহ দেওয়া হবে।',
+        '৳ 500')">
+        🔍 বিস্তারিত
+      </button>
+
       <a
         class="order-button"
         href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
         target="_blank">
         🛒 অর্ডার করুন
       </a>
+
     </div>
+
+  </div>
+
+</section>
+
+
+<!-- GIFT -->
+
+<section class="category-products" id="gift">
+
+  <h2 class="section-title">🎁 গিফট আইটেম</h2>
+
+  <button class="back-button" onclick="backToCategories()">
+    ← সব ক্যাটাগরি
+  </button>
+
+  <div class="products">
 
     <div class="product">
-      <div class="product-image">🎁</div>
-      <h3>কাঠের ক্রেস্ট ভেলভেট বক্সসহ</h3>
-      <p>আকর্ষণীয় ভেলভেট বক্সসহ কাঠের ক্রেস্ট।</p>
+
+      <img
+        class="product-image"
+        src="https://placehold.co/600x400?text=Gift+Item"
+        alt="গিফট আইটেম"
+        onclick="zoomImage(this.src)">
+
+      <h3>সুন্দর গিফট আইটেম</h3>
+
+      <p>বিশেষ অনুষ্ঠান ও উপহারের জন্য সুন্দর গিফট।</p>
+
+      <div class="price">৳ 800</div>
+
+      <button
+        class="details-button"
+        onclick="showDetails(
+        'সুন্দর গিফট আইটেম',
+        'https://placehold.co/600x400?text=Gift+Item',
+        'বিশেষ অনুষ্ঠান ও উপহারের জন্য আকর্ষণীয় গিফট আইটেম।',
+        '৳ 800')">
+        🔍 বিস্তারিত
+      </button>
 
       <a
         class="order-button"
@@ -328,12 +604,49 @@
         target="_blank">
         🛒 অর্ডার করুন
       </a>
+
     </div>
+
+  </div>
+
+</section>
+
+
+<!-- WOOD -->
+
+<section class="category-products" id="wood">
+
+  <h2 class="section-title">🪵 কাঠের পণ্য</h2>
+
+  <button class="back-button" onclick="backToCategories()">
+    ← সব ক্যাটাগরি
+  </button>
+
+  <div class="products">
 
     <div class="product">
-      <div class="product-image">⭐</div>
-      <h3>কাঠের ভিআইপি ক্রেস্ট বক্সসহ</h3>
-      <p>বিশেষ অনুষ্ঠানের জন্য ভিআইপি ক্রেস্ট।</p>
+
+      <img
+        class="product-image"
+        src="https://placehold.co/600x400?text=Wood+Product"
+        alt="কাঠের পণ্য"
+        onclick="zoomImage(this.src)">
+
+      <h3>কাঠের সুন্দর পণ্য</h3>
+
+      <p>মানসম্মত কাঠ দিয়ে তৈরি সুন্দর পণ্য।</p>
+
+      <div class="price">৳ 650</div>
+
+      <button
+        class="details-button"
+        onclick="showDetails(
+        'কাঠের সুন্দর পণ্য',
+        'https://placehold.co/600x400?text=Wood+Product',
+        'মানসম্মত কাঠ দিয়ে তৈরি সুন্দর ও টেকসই পণ্য।',
+        '৳ 650')">
+        🔍 বিস্তারিত
+      </button>
 
       <a
         class="order-button"
@@ -341,12 +654,49 @@
         target="_blank">
         🛒 অর্ডার করুন
       </a>
+
     </div>
+
+  </div>
+
+</section>
+
+
+<!-- AWARD -->
+
+<section class="category-products" id="award">
+
+  <h2 class="section-title">🥇 অ্যাওয়ার্ড</h2>
+
+  <button class="back-button" onclick="backToCategories()">
+    ← সব ক্যাটাগরি
+  </button>
+
+  <div class="products">
 
     <div class="product">
-      <div class="product-image">🏅</div>
-      <h3>কাঠের অ্যাওয়ার্ড ক্রেস্ট</h3>
-      <p>পুরস্কার ও সম্মাননার জন্য সুন্দর ক্রেস্ট।</p>
+
+      <img
+        class="product-image"
+        src="https://placehold.co/600x400?text=Award"
+        alt="অ্যাওয়ার্ড"
+        onclick="zoomImage(this.src)">
+
+      <h3>সুন্দর অ্যাওয়ার্ড</h3>
+
+      <p>পুরস্কার ও সম্মাননার জন্য সুন্দর অ্যাওয়ার্ড।</p>
+
+      <div class="price">৳ 750</div>
+
+      <button
+        class="details-button"
+        onclick="showDetails(
+        'সুন্দর অ্যাওয়ার্ড',
+        'https://placehold.co/600x400?text=Award',
+        'পুরস্কার, সম্মাননা ও বিভিন্ন অনুষ্ঠানের জন্য উপযুক্ত অ্যাওয়ার্ড।',
+        '৳ 750')">
+        🔍 বিস্তারিত
+      </button>
 
       <a
         class="order-button"
@@ -354,12 +704,49 @@
         target="_blank">
         🛒 অর্ডার করুন
       </a>
+
     </div>
+
+  </div>
+
+</section>
+
+
+<!-- BOX -->
+
+<section class="category-products" id="box">
+
+  <h2 class="section-title">📦 বক্স</h2>
+
+  <button class="back-button" onclick="backToCategories()">
+    ← সব ক্যাটাগরি
+  </button>
+
+  <div class="products">
 
     <div class="product">
-      <div class="product-image">📦</div>
-      <h3>চায়না বক্স ক্রেস্ট</h3>
-      <p>আকর্ষণীয় চায়না বক্সসহ ক্রেস্ট।</p>
+
+      <img
+        class="product-image"
+        src="https://placehold.co/600x400?text=Box"
+        alt="বক্স"
+        onclick="zoomImage(this.src)">
+
+      <h3>সুন্দর গিফট বক্স</h3>
+
+      <p>বিভিন্ন গিফট ও ক্রেস্টের জন্য আকর্ষণীয় বক্স।</p>
+
+      <div class="price">৳ 300</div>
+
+      <button
+        class="details-button"
+        onclick="showDetails(
+        'সুন্দর গিফট বক্স',
+        'https://placehold.co/600x400?text=Box',
+        'গিফট ও ক্রেস্ট রাখার জন্য সুন্দর ও আকর্ষণীয় বক্স।',
+        '৳ 300')">
+        🔍 বিস্তারিত
+      </button>
 
       <a
         class="order-button"
@@ -367,76 +754,237 @@
         target="_blank">
         🛒 অর্ডার করুন
       </a>
-    </div>
-
-  </section>
-
-  <section id="order">
-
-    <h2 class="section-title">
-      🛒 অর্ডার করার নিয়ম
-    </h2>
-
-    <div class="order-info">
-
-      <p>
-        <b>অর্ডার করুন</b> বাটনে ক্লিক করে আমাদের অর্ডার ফর্ম পূরণ করুন।
-      </p>
-
-      <p>
-        আপনার নাম, মোবাইল নম্বর, ঠিকানা, পণ্যের নাম
-        এবং কতটি লাগবে তা লিখে অর্ডার পাঠাতে পারবেন।
-      </p>
-
-      <a
-        class="order-button"
-        href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
-        target="_blank">
-        🛒 অর্ডার ফর্ম খুলুন
-      </a>
 
     </div>
 
-  </section>
+  </div>
 
-  <section class="contact" id="contact">
+</section>
 
-    <h2>📍 আমাদের ঠিকানা</h2>
 
-    <div class="address">
-      <b>৬০/বি/১ (আনন্দ শোপান মার্কেট)</b><br>
-      <b>পুরানা পল্টন, ঢাকা–১০০</b>
-    </div>
+<!-- ORDER -->
 
-    <div class="contact-buttons">
+<section id="order">
 
-      <a
-        class="contact-button call-button"
-        href="tel:+8801717223289">
-        📞 কল করুন
-      </a>
+  <h2 class="section-title">
+    🛒 অর্ডার করার নিয়ম
+  </h2>
 
-      <a
-        class="contact-button whatsapp-button"
-        href="https://wa.me/8801717223289"
-        target="_blank">
-        💬 WhatsApp করুন
-      </a>
+  <div class="order-info">
+
+    <p>
+      আপনার পছন্দের পণ্যের <b>অর্ডার করুন</b> বাটনে ক্লিক করে
+      অর্ডার ফর্ম পূরণ করুন।
+    </p>
+
+    <div class="notice">
+
+      <b>📞 গুরুত্বপূর্ণ:</b><br>
+
+      অর্ডার পাওয়ার পর আমাদের পক্ষ থেকে আপনার দেওয়া
+      মোবাইল নম্বরে ফোন করে অর্ডারের সব details confirm করা হবে।
+
+      <br><br>
+
+      ফোনে নিশ্চিত করা হবে:
+
+      <br>✅ পণ্যের availability
+      <br>✅ কতটি পণ্য লাগবে
+      <br>✅ Final price
+      <br>✅ Delivery charge
+      <br>✅ Delivery address
+      <br>✅ সম্ভাব্য delivery date
+      <br>✅ বিশেষ কোনো তারিখে প্রয়োজন হলে সেটি
+
+      <br><br>
+
+      <b>সব details ফোনে confirm হওয়ার পরই অর্ডারটি final করা হবে।</b>
 
     </div>
 
     <a
-      class="map-button"
-      href="https://www.google.com/maps/search/?api=1&query=60%2FB%2F1%20Ananda%20Shopan%20Market%20Purana%20Paltan%20Dhaka%20100"
+      class="order-button"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
       target="_blank">
-      📍 গুগল ম্যাপে লোকেশন দেখুন
+      🛒 অর্ডার ফর্ম খুলুন
     </a>
 
-  </section>
+  </div>
 
-  <footer>
-    <p>© ২০২৬ Zahid Metal — সর্বস্বত্ব সংরক্ষিত</p>
-  </footer>
+</section>
+
+
+<!-- IMAGE ZOOM -->
+
+<div class="image-modal" id="imageModal" onclick="closeImage()">
+
+  <span class="close-image">&times;</span>
+
+  <img id="zoomedImage" src="" alt="Product">
+
+</div>
+
+
+<!-- DETAILS -->
+
+<div class="details-modal" id="detailsModal">
+
+  <div class="details-box">
+
+    <span class="close-details" onclick="closeDetails()">
+      &times;
+    </span>
+
+    <img id="detailsImage" src="" alt="Product">
+
+    <h2 id="detailsName"></h2>
+
+    <p id="detailsDescription"></p>
+
+    <div class="price" id="detailsPrice"></div>
+
+    <a
+      class="order-button"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
+      target="_blank">
+      🛒 অর্ডার করুন
+    </a>
+
+  </div>
+
+</div>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+  <h2>📍 আমাদের ঠিকানা</h2>
+
+  <div class="address">
+    <b>৬০/বি/১ (আনন্দ শোপান মার্কেট)</b><br>
+    <b>পুরানা পল্টন, ঢাকা–১০০</b>
+  </div>
+
+  <div class="contact-buttons">
+
+    <a
+      class="contact-button call-button"
+      href="tel:+8801717223289">
+      📞 কল করুন
+    </a>
+
+    <a
+      class="contact-button whatsapp-button"
+      href="https://wa.me/8801717223289"
+      target="_blank">
+      💬 WhatsApp করুন
+    </a>
+
+  </div>
+
+  <a
+    class="map-button"
+    href="https://www.google.com/maps/search/?api=1&query=60%2FB%2F1%20Ananda%20Shopan%20Market%20Purana%20Paltan%20Dhaka%20100"
+    target="_blank">
+    📍 গুগল ম্যাপে লোকেশন দেখুন
+  </a>
+
+</section>
+
+
+<footer>
+
+  <p>
+    © ২০২৬ Zahid Metal — সর্বস্বত্ব সংরক্ষিত
+  </p>
+
+</footer>
+
+
+<script>
+
+  function showCategory(categoryId) {
+
+    document.querySelector(".categories").style.display = "none";
+
+    document.querySelectorAll(".category-products").forEach(function(section) {
+      section.classList.remove("active");
+    });
+
+    document.getElementById(categoryId).classList.add("active");
+
+    document.getElementById(categoryId).scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+
+
+  function backToCategories() {
+
+    document.querySelectorAll(".category-products").forEach(function(section) {
+      section.classList.remove("active");
+    });
+
+    document.querySelector(".categories").style.display = "flex";
+
+    document.getElementById("categories").scrollIntoView({
+      behavior: "smooth"
+    });
+  }
+
+
+  function zoomImage(imageUrl) {
+
+    document.getElementById("zoomedImage").src = imageUrl;
+
+    document.getElementById("imageModal").style.display = "flex";
+  }
+
+
+  function closeImage() {
+
+    document.getElementById("imageModal").style.display = "none";
+  }
+
+
+  function showDetails(name, image, description, price) {
+
+    document.getElementById("detailsName").textContent = name;
+
+    document.getElementById("detailsImage").src = image;
+
+    document.getElementById("detailsDescription").textContent = description;
+
+    document.getElementById("detailsPrice").textContent = price;
+
+    document.getElementById("detailsModal").style.display = "flex";
+  }
+
+
+  function closeDetails() {
+
+    document.getElementById("detailsModal").style.display = "none";
+  }
+
+
+  window.onclick = function(event) {
+
+    const imageModal = document.getElementById("imageModal");
+
+    const detailsModal = document.getElementById("detailsModal");
+
+    if (event.target === imageModal) {
+      imageModal.style.display = "none";
+    }
+
+    if (event.target === detailsModal) {
+      detailsModal.style.display = "none";
+    }
+
+  };
+
+</script>
 
 </body>
 </html>
