@@ -4,848 +4,839 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Zahid Metal</title>
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-
-body{
-margin:0;
-font-family:Arial,"Noto Sans Bengali",sans-serif;
-background:#f5f5f5;
-color:#222
+*{
+  box-sizing:border-box;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  background:#f5f5f5;
+  color:#222;
+}
+
+/* HEADER */
 header{
-background:#171717;
-color:white;
-text-align:center;
-padding:25px 15px 35px
+  background:#171717;
+  color:white;
+  text-align:center;
+  padding:25px 15px 35px;
 }
 
 .logo{
-width:110px;
-height:110px;
-object-fit:contain;
-margin-bottom:10px
+  width:110px;
+  height:110px;
+  object-fit:contain;
+  border-radius:10px;
 }
 
 header h1{
-margin:0;
-font-size:42px
+  margin:10px 0 5px;
+  font-size:40px;
 }
 
 header p{
-font-size:18px;
-margin:10px 0 0
+  font-size:18px;
 }
 
+/* NAV */
 nav{
-background:white;
-padding:15px;
-text-align:center;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 2px 10px rgba(0,0,0,.12)
+  background:white;
+  padding:15px;
+  text-align:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 2px 10px rgba(0,0,0,.12);
 }
 
 nav a{
-text-decoration:none;
-color:#222;
-font-weight:bold;
-margin:0 14px
+  text-decoration:none;
+  color:#222;
+  font-weight:bold;
+  margin:0 12px;
 }
 
+nav a:hover{
+  color:#b00000;
+}
+
+/* HERO */
 .hero{
-background:white;
-text-align:center;
-padding:65px 20px
+  background:white;
+  text-align:center;
+  padding:60px 20px;
 }
 
 .hero h2{
-font-size:36px
+  font-size:34px;
 }
 
 .hero p{
-font-size:19px;
-line-height:1.7
+  font-size:18px;
+  line-height:1.8;
 }
 
-.hero-button,
-.order-button{
-display:inline-block;
-background:#b00000;
-color:white;
-padding:12px 22px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-border:0;
-cursor:pointer
+.btn{
+  display:inline-block;
+  background:#b00000;
+  color:white;
+  padding:13px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  border:0;
+  cursor:pointer;
 }
 
+/* TITLE */
 .section-title{
-text-align:center;
-font-size:30px;
-margin:45px 0 25px
+  text-align:center;
+  font-size:30px;
+  margin:45px 0 25px;
 }
 
-/* CATEGORY */
-
+/* CATEGORIES */
 .categories{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-padding:10px 20px 50px
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+  padding:10px 20px 50px;
 }
 
 .category{
-background:white;
-width:220px;
-padding:25px 15px;
-border-radius:15px;
-text-align:center;
-cursor:pointer;
-box-shadow:0 4px 15px rgba(0,0,0,.12);
-transition:.2s
+  background:white;
+  width:220px;
+  padding:25px 15px;
+  border-radius:15px;
+  text-align:center;
+  cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,.12);
+  transition:.2s;
 }
 
 .category:hover{
-transform:translateY(-5px)
+  transform:translateY(-5px);
 }
 
 .category-icon{
-font-size:55px
+  font-size:55px;
 }
 
 .category h3{
-font-size:21px;
-margin:8px 0
+  margin-bottom:8px;
 }
 
 .category p{
-color:#666
+  color:#666;
 }
 
 /* PRODUCTS */
-
-.category-products{
-display:none;
-padding:10px 20px 50px
+.products-section{
+  display:none;
+  padding:10px 20px 50px;
 }
 
-.category-products.active{
-display:block
+.products-section.active{
+  display:block;
 }
 
-.back-button{
-display:block;
-margin:0 auto 25px;
-background:#171717;
-color:white;
-border:0;
-padding:11px 20px;
-border-radius:8px;
-cursor:pointer
+.back-btn{
+  display:block;
+  margin:0 auto 25px;
+  background:#171717;
+  color:white;
+  border:0;
+  padding:11px 20px;
+  border-radius:8px;
+  cursor:pointer;
 }
 
 .products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,280px));
-justify-content:center;
-gap:25px
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,280px));
+  justify-content:center;
+  gap:25px;
 }
 
 .product{
-background:white;
-padding:18px;
-border-radius:15px;
-text-align:center;
-box-shadow:0 4px 15px rgba(0,0,0,.12);
-transition:.2s
+  background:white;
+  padding:16px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,.12);
 }
 
-.product:hover{
-transform:translateY(-4px)
-}
-
-.product-image{
-width:100%;
-height:190px;
-object-fit:cover;
-border-radius:12px;
-cursor:zoom-in;
-background:#eee
+.product img{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  border-radius:10px;
+  cursor:zoom-in;
 }
 
 .product h3{
-font-size:19px;
-margin:12px 0 8px
-}
-
-.product p{
-color:#666;
-line-height:1.6
+  font-size:19px;
 }
 
 .product-info{
-background:#fafafa;
-padding:10px;
-border-radius:8px;
-text-align:left;
-line-height:1.8;
-margin-top:10px
+  background:#fafafa;
+  padding:10px;
+  border-radius:8px;
+  text-align:left;
+  line-height:1.8;
 }
 
 .price{
-font-size:21px;
-font-weight:bold;
-color:#b00000;
-margin:12px 0
+  color:#b00000;
+  font-size:21px;
+  font-weight:bold;
+  margin:12px;
 }
 
-.details-button{
-background:#171717;
-color:white;
-border:0;
-padding:11px 17px;
-border-radius:7px;
-cursor:pointer;
-font-weight:bold;
-margin:4px
+.details-btn{
+  background:#171717;
+  color:white;
+  border:0;
+  padding:10px 15px;
+  border-radius:7px;
+  cursor:pointer;
+  margin:4px;
+}
+
+.order-btn{
+  background:#b00000;
+  color:white;
+  border:0;
+  padding:10px 15px;
+  border-radius:7px;
+  cursor:pointer;
+  margin:4px;
 }
 
 /* MODAL */
-
 .modal{
-display:none;
-position:fixed;
-z-index:1000;
-left:0;
-top:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,.85);
-align-items:center;
-justify-content:center;
-padding:20px
+  display:none;
+  position:fixed;
+  z-index:1000;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
 }
 
 .modal-box{
-background:white;
-max-width:520px;
-width:100%;
-max-height:90vh;
-overflow:auto;
-border-radius:15px;
-padding:25px;
-text-align:center;
-position:relative
+  background:white;
+  width:100%;
+  max-width:520px;
+  max-height:90vh;
+  overflow:auto;
+  border-radius:15px;
+  padding:25px;
+  text-align:center;
+  position:relative;
 }
 
 .modal-box img{
-width:100%;
-height:280px;
-object-fit:contain;
-background:#eee;
-border-radius:10px
+  width:100%;
+  height:280px;
+  object-fit:contain;
+  background:#eee;
+  border-radius:10px;
 }
 
 .close{
-position:absolute;
-right:18px;
-top:8px;
-font-size:32px;
-cursor:pointer
-}
-
-.zoom-image{
-max-width:95%;
-max-height:90%;
-object-fit:contain
+  position:absolute;
+  right:18px;
+  top:7px;
+  font-size:32px;
+  cursor:pointer;
 }
 
 /* ORDER */
-
-.order-info{
-background:white;
-max-width:850px;
-margin:20px auto 50px;
-padding:30px;
-border-radius:15px;
-box-shadow:0 4px 15px rgba(0,0,0,.1);
-text-align:center
+.order-box{
+  max-width:750px;
+  margin:20px auto 60px;
+  padding:30px 20px;
+  background:white;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,.12);
+  text-align:center;
 }
 
-.notice{
-background:#fff4f4;
-border-left:5px solid #b00000;
-padding:18px;
-text-align:left;
-line-height:1.9;
-border-radius:8px
+.order-note{
+  background:#fff4f4;
+  border-left:5px solid #b00000;
+  padding:15px;
+  line-height:1.8;
+  text-align:left;
+  border-radius:8px;
+  margin-bottom:20px;
+}
+
+.form-link{
+  display:inline-block;
+  background:#b00000;
+  color:white;
+  padding:16px 30px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:19px;
+  font-weight:bold;
+}
+
+.form-link:hover{
+  background:#800000;
 }
 
 /* CONTACT */
-
 .contact{
-background:#171717;
-color:white;
-text-align:center;
-padding:50px 20px
+  background:#171717;
+  color:white;
+  text-align:center;
+  padding:50px 20px;
 }
 
-.address{
-font-size:18px;
-line-height:1.8
+.contact a{
+  display:inline-block;
+  margin:7px;
+  padding:13px 22px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.contact-button{
-display:inline-block;
-margin:8px;
-padding:13px 22px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold
+.call{
+  background:white;
+  color:#222;
 }
 
-.call-button{
-background:white;
-color:#222
+.whatsapp{
+  background:#25D366;
+  color:white;
 }
 
-.whatsapp-button{
-background:#25D366;
-color:white
-}
-
-.map-button{
-display:inline-block;
-margin-top:15px;
-background:white;
-color:#222;
-padding:12px 22px;
-border-radius:7px;
-text-decoration:none;
-font-weight:bold
+.map{
+  background:white;
+  color:#222;
 }
 
 footer{
-background:#0d0d0d;
-color:white;
-text-align:center;
-padding:20px
+  background:#0d0d0d;
+  color:white;
+  text-align:center;
+  padding:20px;
 }
 
+/* MOBILE */
 @media(max-width:600px){
 
-header h1{font-size:32px}
+  header h1{
+    font-size:32px;
+  }
 
-.logo{
-width:90px;
-height:90px
-}
+  .logo{
+    width:90px;
+    height:90px;
+  }
 
-.hero h2{font-size:28px}
+  .hero h2{
+    font-size:28px;
+  }
 
-nav a{
-display:inline-block;
-margin:7px
-}
+  nav a{
+    display:inline-block;
+    margin:6px;
+  }
 
-.category{
-width:92%
-}
+  .category{
+    width:90%;
+  }
 
-.products{
-grid-template-columns:1fr
-}
-
+  .products{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
 
-<img
-class="logo"
-src="ChatGPT%20Image%20Sep%201,%202026,%2012_17_19%20AM.png"
-alt="Zahid Metal Logo">
+  <img
+    class="logo"
+    src="ChatGPT%20Image%20Sep%201,%202026,%2012_17_19%20AM.png"
+    alt="Zahid Metal Logo">
 
-<h1>🏆 Zahid Metal</h1>
+  <h1>🏆 Zahid Metal</h1>
 
-<p>All Kinds of Metallic & Wooden Gift Item</p>
+  <p>All Kinds of Metallic & Wooden Gift Item</p>
 
 </header>
 
+
+<!-- NAV -->
 <nav>
-<a href="#home">হোম</a>
-<a href="#categories">ক্যাটাগরি</a>
-<a href="#order">অর্ডার</a>
-<a href="#contact">যোগাযোগ</a>
+  <a href="#home">হোম</a>
+  <a href="#categories">ক্যাটাগরি</a>
+  <a href="#order">অর্ডার</a>
+  <a href="#contact">যোগাযোগ</a>
 </nav>
 
+
+<!-- HERO -->
 <section class="hero" id="home">
 
-<h2>স্বাগতম Zahid Metal-এ ❤️</h2>
+  <h2>স্বাগতম Zahid Metal-এ ❤️</h2>
 
-<p>
-সুন্দর ও মানসম্মত ক্রেস্ট, গিফট আইটেম,
-কাঠের পণ্য, অ্যাওয়ার্ড ও বক্সের জন্য
-আমাদের সাথে যোগাযোগ করুন।
-</p>
+  <p>
+    সুন্দর ও মানসম্মত ক্রেস্ট, গিফট আইটেম,
+    কাঠের পণ্য, অ্যাওয়ার্ড ও বক্সের জন্য
+    আমাদের সাথে যোগাযোগ করুন।
+  </p>
 
-<a class="hero-button" href="#categories">
-🛍️ পণ্য দেখুন
-</a>
+  <a href="#categories" class="btn">
+    🛍️ পণ্য দেখুন
+  </a>
 
 </section>
 
+
+<!-- CATEGORIES -->
 <h2 class="section-title" id="categories">
-🛍️ আমাদের ক্যাটাগরি
+  🛍️ আমাদের ক্যাটাগরি
 </h2>
 
 <section class="categories">
 
-<div class="category" onclick="openCategory('crest')">
-<div class="category-icon">🏆</div>
-<h3>ক্রেস্ট</h3>
-<p>২০টি Product</p>
-</div>
+  <div class="category" onclick="openCategory('crest')">
+    <div class="category-icon">🏆</div>
+    <h3>ক্রেস্ট</h3>
+    <p>২০টি Product</p>
+  </div>
 
-<div class="category" onclick="openCategory('gift')">
-<div class="category-icon">🎁</div>
-<h3>গিফট আইটেম</h3>
-<p>২০টি Product</p>
-</div>
+  <div class="category" onclick="openCategory('gift')">
+    <div class="category-icon">🎁</div>
+    <h3>গিফট আইটেম</h3>
+    <p>২০টি Product</p>
+  </div>
 
-<div class="category" onclick="openCategory('wood')">
-<div class="category-icon">🪵</div>
-<h3>কাঠের পণ্য</h3>
-<p>২০টি Product</p>
-</div>
+  <div class="category" onclick="openCategory('wood')">
+    <div class="category-icon">🪵</div>
+    <h3>কাঠের পণ্য</h3>
+    <p>২০টি Product</p>
+  </div>
 
-<div class="category" onclick="openCategory('award')">
-<div class="category-icon">🥇</div>
-<h3>অ্যাওয়ার্ড</h3>
-<p>২০টি Product</p>
-</div>
+  <div class="category" onclick="openCategory('award')">
+    <div class="category-icon">🥇</div>
+    <h3>অ্যাওয়ার্ড</h3>
+    <p>২০টি Product</p>
+  </div>
 
-<div class="category" onclick="openCategory('box')">
-<div class="category-icon">📦</div>
-<h3>বক্স</h3>
-<p>২০টি Product</p>
-</div>
+  <div class="category" onclick="openCategory('box')">
+    <div class="category-icon">📦</div>
+    <h3>বক্স</h3>
+    <p>২০টি Product</p>
+  </div>
 
 </section>
 
 
 <!-- PRODUCT SECTIONS -->
 
-<section id="crest" class="category-products">
-<h2 class="section-title">🏆 ক্রেস্ট</h2>
-<button class="back-button" onclick="backCategories()">← সব ক্যাটাগরি</button>
-<div class="products" id="crestList"></div>
-</section>
-
-<section id="gift" class="category-products">
-<h2 class="section-title">🎁 গিফট আইটেম</h2>
-<button class="back-button" onclick="backCategories()">← সব ক্যাটাগরি</button>
-<div class="products" id="giftList"></div>
-</section>
-
-<section id="wood" class="category-products">
-<h2 class="section-title">🪵 কাঠের পণ্য</h2>
-<button class="back-button" onclick="backCategories()">← সব ক্যাটাগরি</button>
-<div class="products" id="woodList"></div>
-</section>
-
-<section id="award" class="category-products">
-<h2 class="section-title">🥇 অ্যাওয়ার্ড</h2>
-<button class="back-button" onclick="backCategories()">← সব ক্যাটাগরি</button>
-<div class="products" id="awardList"></div>
-</section>
-
-<section id="box" class="category-products">
-<h2 class="section-title">📦 বক্স</h2>
-<button class="back-button" onclick="backCategories()">← সব ক্যাটাগরি</button>
-<div class="products" id="boxList"></div>
+<section id="crest" class="products-section">
+  <h2 class="section-title">🏆 ক্রেস্ট</h2>
+  <button class="back-btn" onclick="backCategories()">← সব ক্যাটাগরি</button>
+  <div class="products" id="crestList"></div>
 </section>
 
 
-<!-- ZOOM MODAL -->
+<section id="gift" class="products-section">
+  <h2 class="section-title">🎁 গিফট আইটেম</h2>
+  <button class="back-btn" onclick="backCategories()">← সব ক্যাটাগরি</button>
+  <div class="products" id="giftList"></div>
+</section>
 
+
+<section id="wood" class="products-section">
+  <h2 class="section-title">🪵 কাঠের পণ্য</h2>
+  <button class="back-btn" onclick="backCategories()">← সব ক্যাটাগরি</button>
+  <div class="products" id="woodList"></div>
+</section>
+
+
+<section id="award" class="products-section">
+  <h2 class="section-title">🥇 অ্যাওয়ার্ড</h2>
+  <button class="back-btn" onclick="backCategories()">← সব ক্যাটাগরি</button>
+  <div class="products" id="awardList"></div>
+</section>
+
+
+<section id="box" class="products-section">
+  <h2 class="section-title">📦 বক্স</h2>
+  <button class="back-btn" onclick="backCategories()">← সব ক্যাটাগরি</button>
+  <div class="products" id="boxList"></div>
+</section>
+
+
+<!-- IMAGE ZOOM -->
 <div class="modal" id="imageModal" onclick="closeImage()">
 
-<span class="close">&times;</span>
+  <span class="close">&times;</span>
 
-<img class="zoom-image" id="zoomImage">
+  <img id="zoomImage" alt="Product">
 
 </div>
 
 
-<!-- DETAILS MODAL -->
-
+<!-- DETAILS -->
 <div class="modal" id="detailsModal">
 
-<div class="modal-box">
+  <div class="modal-box">
 
-<span class="close" onclick="closeDetails()">&times;</span>
+    <span class="close" onclick="closeDetails()">
+      &times;
+    </span>
 
-<img id="detailsImage">
+    <img id="detailsImage" alt="Product">
 
-<h2 id="detailsName"></h2>
+    <h2 id="detailsName"></h2>
 
-<p>📏 <b>Size:</b> <span id="detailsSize"></span></p>
+    <p>
+      📏 <b>মাপ:</b>
+      <span id="detailsSize"></span>
+    </p>
 
-<p>🪵 <b>Material:</b> <span id="detailsMaterial"></span></p>
+    <p>
+      🪵 <b>উপাদান:</b>
+      <span id="detailsMaterial"></span>
+    </p>
 
-<p>🎨 <b>Color:</b> <span id="detailsColor"></span></p>
+    <p>
+      🎨 <b>রং:</b>
+      <span id="detailsColor"></span>
+    </p>
 
-<p id="detailsDescription"></p>
+    <p id="detailsDescription"></p>
 
-<div class="price" id="detailsPrice"></div>
+    <div class="price" id="detailsPrice"></div>
 
-<a
-class="order-button"
-href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
-target="_blank">
+    <button class="order-btn" onclick="orderProduct()">
+      🛒 এই পণ্য অর্ডার করুন
+    </button>
 
-🛒 অর্ডার করুন
+  </div>
 
-</a>
-
-</div>
 </div>
 
 
 <!-- ORDER -->
-
 <section id="order">
 
-<h2 class="section-title">
-🛒 অর্ডার করার নিয়ম
-</h2>
+  <h2 class="section-title">
+    🛒 অর্ডার করুন
+  </h2>
 
-<div class="order-info">
+  <div class="order-box">
 
-<p>
-পছন্দের product-এর
-<b>🛒 অর্ডার করুন</b> বাটনে ক্লিক করে
-ফর্ম পূরণ করুন।
-</p>
+    <div class="order-note">
 
-<div class="notice">
+      📞 <b>অর্ডার সংক্রান্ত গুরুত্বপূর্ণ তথ্য</b>
 
-<b>📞 অর্ডারের পর কী হবে?</b>
+      <br><br>
 
-<br><br>
+      অর্ডার করার জন্য নিচের ফর্মটি পূরণ করুন।
 
-অর্ডার পাওয়ার পর আমাদের পক্ষ থেকে
-আপনার দেওয়া মোবাইল নম্বরে ফোন করা হবে।
+      <br><br>
 
-<br><br>
+      আপনার অর্ডারের তথ্য পাওয়ার পর
+      <b>Zahid Metal</b> থেকে আপনার দেওয়া
+      মোবাইল নম্বরে ফোন করা হবে।
 
-ফোনে নিশ্চিত করা হবে:
+      <br><br>
 
-<br>✅ Product
-<br>✅ Quantity
-<br>✅ Size
-<br>✅ Price
-<br>✅ Delivery charge
-<br>✅ Delivery address
-<br>✅ সম্ভাব্য Delivery date
+      ফোনে পণ্যের মূল্য, ডেলিভারি খরচ
+      এবং সম্ভাব্য ডেলিভারি তারিখ
+      নিশ্চিত করা হবে।
 
-<br><br>
+      <br><br>
 
-<b>
-সব details confirm হওয়ার পর
-অর্ডারটি final করা হবে।
-</b>
+      সব তথ্য নিশ্চিত হওয়ার পর
+      আপনার অর্ডার চূড়ান্ত করা হবে।
 
-</div>
+    </div>
 
-<br>
 
-<a
-class="order-button"
-href="https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog"
-target="_blank">
+    <a
+      class="form-link"
+      href="https://docs.google.com/forms/d/e/1FAIpQLSfRaM8WR0K1rzPm37NlXuZrdBZF-a_UgFprh_RQFay0uUMYvw/viewform?usp=header"
+      target="_blank">
 
-🛒 অর্ডার ফর্ম খুলুন
+      📝 অর্ডার ফর্ম খুলুন
 
-</a>
+    </a>
 
-</div>
+  </div>
 
 </section>
 
 
 <!-- CONTACT -->
-
 <section class="contact" id="contact">
 
-<h2>📍 আমাদের ঠিকানা</h2>
+  <h2>📍 আমাদের ঠিকানা</h2>
 
-<div class="address">
+  <p>
+    <b>৬০/বি/১ (আনন্দ শোপান মার্কেট)</b>
+    <br>
+    <b>পুরানা পল্টন, ঢাকা–১০০</b>
+  </p>
 
-<b>৬০/বি/১ (আনন্দ শোপান মার্কেট)</b>
-<br>
-<b>পুরানা পল্টন, ঢাকা–১০০</b>
 
-</div>
+  <a
+    class="call"
+    href="tel:+8801717223289">
 
-<br>
+    📞 কল করুন
 
-<a
-class="contact-button call-button"
-href="tel:+8801717223289">
-📞 কল করুন
-</a>
+  </a>
 
-<a
-class="contact-button whatsapp-button"
-href="https://wa.me/8801717223289"
-target="_blank">
-💬 WhatsApp করুন
-</a>
 
-<br>
+  <a
+    class="whatsapp"
+    href="https://wa.me/8801717223289"
+    target="_blank">
 
-<a
-class="map-button"
-href="https://www.google.com/maps/search/?api=1&query=60%2FB%2F1%20Ananda%20Shopan%20Market%20Purana%20Paltan%20Dhaka%20100"
-target="_blank">
-📍 Google Maps
-</a>
+    💬 WhatsApp
+
+  </a>
+
+
+  <br>
+
+
+  <a
+    class="map"
+    href="https://www.google.com/maps/search/?api=1&query=60%2FB%2F1%20Ananda%20Shopan%20Market%20Purana%20Paltan%20Dhaka%20100"
+    target="_blank">
+
+    📍 Google Maps
+
+  </a>
 
 </section>
 
 
 <footer>
-<p>© ২০২৬ Zahid Metal — সর্বস্বত্ব সংরক্ষিত</p>
+
+  © ২০২৬ Zahid Metal — সর্বস্বত্ব সংরক্ষিত
+
 </footer>
 
 
 <script>
 
-const orderLink =
-"https://docs.google.com/forms/d/e/1FAIpQLSdatzpqQ67sYlfMT1OPcdQg8_8XTDEnvX-hve6vAsj6bRc2sQ/viewform?usp=dialog";
+/* PRODUCT DATA */
 
+const products = {
 
-/*
-==================================================
-এখানে PRODUCT-এর ছবি বসানো হবে
-==================================================
+  crest:{
+    title:"ক্রেস্ট",
+    emoji:"🏆",
+    material:"কাঠ ও ধাতু",
+    size:"12 × 8 inch",
+    color:"গোল্ডেন / কাঠের",
+    price:500,
+    description:"সুন্দর ডিজাইনের মানসম্মত ক্রেস্ট।"
+  },
 
-প্রথমে GitHub-এ ছবি upload করবি।
+  gift:{
+    title:"গিফট আইটেম",
+    emoji:"🎁",
+    material:"বিভিন্ন উপাদান",
+    size:"8 × 6 inch",
+    color:"বিভিন্ন",
+    price:800,
+    description:"বিশেষ অনুষ্ঠানের জন্য সুন্দর গিফট আইটেম।"
+  },
 
-তারপর ছবির নাম এমন রাখবি:
+  wood:{
+    title:"কাঠের পণ্য",
+    emoji:"🪵",
+    material:"মানসম্মত কাঠ",
+    size:"10 × 7 inch",
+    color:"প্রাকৃতিক কাঠের রং",
+    price:650,
+    description:"মানসম্মত কাঠ দিয়ে তৈরি সুন্দর পণ্য।"
+  },
 
-crest1.jpg
-crest2.jpg
-crest3.jpg
-...
-crest20.jpg
+  award:{
+    title:"অ্যাওয়ার্ড",
+    emoji:"🥇",
+    material:"ধাতু / অ্যাক্রিলিক",
+    size:"10 × 6 inch",
+    color:"গোল্ডেন / সিলভার",
+    price:750,
+    description:"পুরস্কার ও সম্মাননার জন্য সুন্দর অ্যাওয়ার্ড।"
+  },
 
-gift1.jpg ... gift20.jpg
-
-wood1.jpg ... wood20.jpg
-
-award1.jpg ... award20.jpg
-
-box1.jpg ... box20.jpg
-
-*/
-
-
-const data={
-
-crest:{
-title:"ক্রেস্ট",
-emoji:"🏆",
-material:"Wood & Metal",
-size:"12 × 8 inch",
-color:"Golden / Wooden",
-price:500,
-description:"সুন্দর ডিজাইনের ক্রেস্ট।"
-},
-
-gift:{
-title:"গিফট আইটেম",
-emoji:"🎁",
-material:"Mixed Material",
-size:"8 × 6 inch",
-color:"Various",
-price:800,
-description:"বিশেষ অনুষ্ঠানের জন্য সুন্দর গিফট আইটেম।"
-},
-
-wood:{
-title:"কাঠের পণ্য",
-emoji:"🪵",
-material:"Premium Wood",
-size:"10 × 7 inch",
-color:"Natural Wood",
-price:650,
-description:"মানসম্মত কাঠ দিয়ে তৈরি পণ্য।"
-},
-
-award:{
-title:"অ্যাওয়ার্ড",
-emoji:"🥇",
-material:"Metal / Acrylic",
-size:"10 × 6 inch",
-color:"Golden / Silver",
-price:750,
-description:"পুরস্কার ও সম্মাননার জন্য অ্যাওয়ার্ড।"
-},
-
-box:{
-title:"বক্স",
-emoji:"📦",
-material:"Wood / MDF",
-size:"12 × 9 inch",
-color:"Various",
-price:300,
-description:"ক্রেস্ট ও গিফট রাখার জন্য বক্স।"
-}
+  box:{
+    title:"বক্স",
+    emoji:"📦",
+    material:"কাঠ / MDF",
+    size:"12 × 9 inch",
+    color:"বিভিন্ন",
+    price:300,
+    description:"ক্রেস্ট ও গিফট রাখার জন্য সুন্দর বক্স।"
+  }
 
 };
 
 
-/*
-==================================================
-PRODUCT CREATE
-==================================================
-*/
+/* CREATE 20 DEMO PRODUCTS */
 
-function makeProducts(category){
+function createProducts(category){
 
-const d=data[category];
+  const data = products[category];
 
-const list=document.getElementById(category+"List");
+  const list =
+    document.getElementById(category+"List");
 
-for(let i=1;i<=20;i++){
+  for(let i=1;i<=20;i++){
 
-/*
-আসল ছবি থাকলে:
-crest1.jpg
-crest2.jpg
-...
-*/
+    const image =
+      "https://placehold.co/600x400?text="
+      +
+      encodeURIComponent(
+        data.emoji+" "+data.title+" "+i
+      );
 
-const imageFile=category+i+".jpg";
+    const price =
+      data.price + (i * 25);
 
-/*
-এখন ছবি না থাকায় demo image দেখাবে।
-পরে GitHub-এ imageFile নামে ছবি রাখলে
-নিচের image URL পরিবর্তন করে দেওয়া যাবে।
-*/
+    const productName =
+      data.title+" "+String(i).padStart(2,"0");
 
-const demoImage=
-"https://placehold.co/600x400?text="
-+encodeURIComponent(d.emoji+" "+d.title+" "+i);
 
-const price=d.price+(i*25);
+    const card =
+      document.createElement("div");
 
-const card=document.createElement("div");
+    card.className="product";
 
-card.className="product";
 
-card.innerHTML=`
+    card.innerHTML = `
 
-<img
-class="product-image"
-src="${demoImage}"
-alt="${d.title} ${i}"
-onclick="zoom('${demoImage}')">
+      <img
+        src="${image}"
+        alt="${productName}"
+        onclick="zoomImage('${image}')">
 
-<h3>${d.emoji} ${d.title} ${i}</h3>
 
-<p>${d.description}</p>
+      <h3>
+        ${data.emoji} ${productName}
+      </h3>
 
-<div class="product-info">
 
-📏 <b>Size:</b> ${d.size}
-<br>
+      <div class="product-info">
 
-🪵 <b>Material:</b> ${d.material}
-<br>
+        📏 <b>মাপ:</b> ${data.size}
 
-🎨 <b>Color:</b> ${d.color}
+        <br>
 
-</div>
+        🪵 <b>উপাদান:</b> ${data.material}
 
-<div class="price">
-৳ ${price}
-</div>
+        <br>
 
-<button
-class="details-button"
-onclick="details(
-'${d.title} ${i}',
-'${demoImage}',
-'${d.size}',
-'${d.material}',
-'${d.color}',
-'${price}',
-'${d.description}'
-)">
+        🎨 <b>রং:</b> ${data.color}
 
-🔍 বিস্তারিত
+      </div>
 
-</button>
 
-<a
-class="order-button"
-href="${orderLink}"
-target="_blank">
+      <div class="price">
+        ৳ ${price}
+      </div>
 
-🛒 অর্ডার
 
-</a>
+      <button
+        class="details-btn"
+        onclick="showDetails(
+          '${productName}',
+          '${image}',
+          '${data.size}',
+          '${data.material}',
+          '${data.color}',
+          '${price}',
+          '${data.description}'
+        )">
 
-`;
+        🔍 বিস্তারিত
 
-list.appendChild(card);
+      </button>
 
-}
+
+      <button
+        class="order-btn"
+        onclick="quickOrder('${productName}')">
+
+        🛒 অর্ডার
+
+      </button>
+
+    `;
+
+
+    list.appendChild(card);
+
+  }
 
 }
 
 
-/* CREATE 100 PRODUCTS */
-
-makeProducts("crest");
-makeProducts("gift");
-makeProducts("wood");
-makeProducts("award");
-makeProducts("box");
+createProducts("crest");
+createProducts("gift");
+createProducts("wood");
+createProducts("award");
+createProducts("box");
 
 
-/* OPEN CATEGORY */
+/* CATEGORY OPEN */
 
 function openCategory(id){
 
-document.querySelector(".categories")
-.style.display="none";
+  document
+    .querySelector(".categories")
+    .style.display="none";
 
-document.querySelectorAll(".category-products")
-.forEach(x=>x.classList.remove("active"));
 
-document.getElementById(id)
-.classList.add("active");
+  document
+    .querySelectorAll(".products-section")
+    .forEach(section=>{
+      section.classList.remove("active");
+    });
 
-document.getElementById(id)
-.scrollIntoView({
-behavior:"smooth"
-});
+
+  document
+    .getElementById(id)
+    .classList.add("active");
+
+
+  document
+    .getElementById(id)
+    .scrollIntoView({
+      behavior:"smooth"
+    });
 
 }
 
@@ -854,97 +845,155 @@ behavior:"smooth"
 
 function backCategories(){
 
-document.querySelectorAll(".category-products")
-.forEach(x=>x.classList.remove("active"));
+  document
+    .querySelectorAll(".products-section")
+    .forEach(section=>{
+      section.classList.remove("active");
+    });
 
-document.querySelector(".categories")
-.style.display="flex";
 
-document.getElementById("categories")
-.scrollIntoView({
-behavior:"smooth"
-});
+  document
+    .querySelector(".categories")
+    .style.display="flex";
+
+
+  document
+    .getElementById("categories")
+    .scrollIntoView({
+      behavior:"smooth"
+    });
+
+}
+
+
+/* IMAGE ZOOM */
+
+function zoomImage(image){
+
+  document
+    .getElementById("zoomImage")
+    .src=image;
+
+
+  document
+    .getElementById("imageModal")
+    .style.display="flex";
 
 }
 
-
-/* ZOOM */
-
-function zoom(image){
-
-document.getElementById("zoomImage")
-.src=image;
-
-document.getElementById("imageModal")
-.style.display="flex";
-
-}
 
 function closeImage(){
 
-document.getElementById("imageModal")
-.style.display="none";
+  document
+    .getElementById("imageModal")
+    .style.display="none";
 
 }
 
 
 /* DETAILS */
 
-function details(
-name,
-image,
-size,
-material,
-color,
-price,
-description
+let selectedProduct="";
+
+
+function showDetails(
+  name,
+  image,
+  size,
+  material,
+  color,
+  price,
+  description
 ){
 
-document.getElementById("detailsName")
-.textContent=name;
+  selectedProduct=name;
 
-document.getElementById("detailsImage")
-.src=image;
 
-document.getElementById("detailsSize")
-.textContent=size;
+  document
+    .getElementById("detailsName")
+    .textContent=name;
 
-document.getElementById("detailsMaterial")
-.textContent=material;
 
-document.getElementById("detailsColor")
-.textContent=color;
+  document
+    .getElementById("detailsImage")
+    .src=image;
 
-document.getElementById("detailsPrice")
-.textContent="৳ "+price;
 
-document.getElementById("detailsDescription")
-.textContent=description;
+  document
+    .getElementById("detailsSize")
+    .textContent=size;
 
-document.getElementById("detailsModal")
-.style.display="flex";
+
+  document
+    .getElementById("detailsMaterial")
+    .textContent=material;
+
+
+  document
+    .getElementById("detailsColor")
+    .textContent=color;
+
+
+  document
+    .getElementById("detailsPrice")
+    .textContent="৳ "+price;
+
+
+  document
+    .getElementById("detailsDescription")
+    .textContent=description;
+
+
+  document
+    .getElementById("detailsModal")
+    .style.display="flex";
 
 }
 
 
 function closeDetails(){
 
-document.getElementById("detailsModal")
-.style.display="none";
+  document
+    .getElementById("detailsModal")
+    .style.display="none";
 
 }
 
 
-/* ESC */
+/* ORDER PRODUCT */
 
-document.addEventListener("keydown",function(e){
+function orderProduct(){
 
-if(e.key==="Escape"){
-closeImage();
-closeDetails();
+  closeDetails();
+
+  const formURL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfRaM8WR0K1rzPm37NlXuZrdBZF-a_UgFprh_RQFay0uUMYvw/viewform?usp=header";
+
+
+  window.open(
+    formURL,
+    "_blank"
+  );
+
 }
 
-});
+
+/* QUICK ORDER */
+
+function quickOrder(name){
+
+  selectedProduct=name;
+
+  const formURL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfRaM8WR0K1rzPm37NlXuZrdBZF-a_UgFprh_RQFay0uUMYvw/viewform?usp=header";
+
+
+  window.open(
+    formURL,
+    "_blank"
+  );
+
+}
 
 </script>
 
