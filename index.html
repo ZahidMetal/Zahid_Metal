@@ -1,913 +1,307 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Zahid Metal</title>
-
-<style>
-
-/* =========================
-   GENERAL
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Georgia, "Times New Roman", serif;
-    background:#fff;
-    color:#111;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header{
-    height:72px;
-    background:#111315;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 55px;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.35);
-}
-
-
-/* LOGO */
-
-.logo-area{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.logo-area img{
-    width:70px;
-    height:65px;
-    object-fit:contain;
-}
-
-.logo-text{
-    font-size:30px;
-    font-weight:bold;
-    color:white;
-}
-
-.logo-text span{
-    color:#d71919;
-}
-
-
-/* NAVIGATION */
-
-nav{
-    display:flex;
-    gap:42px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    font-size:17px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#e00000;
-}
-
-nav a.active{
-    color:#e00000;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    min-height:605px;
-    position:relative;
-    overflow:hidden;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    background:
-        radial-gradient(circle at center,#fff 0%,#f4f4f4 65%,#e8e8e8 100%);
-}
-
-
-/* decorative waves */
-
-.hero::before{
-    content:"";
-    position:absolute;
-    left:-5%;
-    bottom:-130px;
-    width:110%;
-    height:260px;
-
-    background:#d00000;
-
-    border-radius:50% 50% 0 0;
-    transform:rotate(-4deg);
-}
-
-.hero::after{
-    content:"";
-    position:absolute;
-    left:-5%;
-    bottom:-160px;
-    width:110%;
-    height:220px;
-
-    background:#111315;
-
-    border-radius:50% 50% 0 0;
-    transform:rotate(-4deg);
-}
-
-
-/* HERO CONTENT */
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    margin-top:-15px;
-}
-
-.hero-logo{
-    width:420px;
-    max-width:80%;
-    height:auto;
-    object-fit:contain;
-}
-
-.hero-title{
-    font-size:65px;
-    margin-top:5px;
-    font-weight:bold;
-    text-shadow:2px 2px 3px rgba(0,0,0,.25);
-}
-
-.hero-title .black{
-    color:#111;
-}
-
-.hero-title .red{
-    color:#d00000;
-}
-
-.hero-line{
-    width:500px;
-    max-width:80%;
-    height:4px;
-    margin:5px auto 10px;
-
-    background:linear-gradient(
-        to right,
-        transparent,
-        #d00000,
-        #d00000,
-        transparent
-    );
-}
-
-.hero-text{
-    font-family:Arial,sans-serif;
-    font-size:22px;
-    font-weight:bold;
-    letter-spacing:.5px;
-}
-
-.flower{
-    font-size:42px;
-    color:#c80000;
-    margin-top:8px;
-}
-
-
-/* =========================
-   SECTION TITLE
-========================= */
-
-.section{
-    padding:60px 5%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-decoration{
-    color:#c80000;
-    font-size:22px;
-    letter-spacing:8px;
-}
-
-.section-title h2{
-    font-size:42px;
-    margin:7px 0;
-}
-
-.section-title h2 span{
-    color:#c80000;
-}
-
-.section-heart{
-    color:#c80000;
-    font-size:25px;
-}
-
-
-/* =========================
-   PRODUCTS
-========================= */
-
-.products{
-    background:white;
-}
-
-.product-grid{
-    max-width:1250px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:
-        repeat(4,1fr);
-
-    gap:28px;
-}
-
-.product-card{
-    background:#fff;
-    border-radius:10px;
-    overflow:hidden;
-
-    box-shadow:
-        0 3px 14px rgba(0,0,0,.15);
-
-    transition:.3s;
-}
-
-.product-card:hover{
-    transform:translateY(-8px);
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.25);
-}
-
-.product-image{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-    display:block;
-}
-
-.product-info{
-    text-align:center;
-    padding:15px;
-    border-top:1px solid #ddd;
-}
-
-.product-info h3{
-    font-size:21px;
-    margin-bottom:12px;
-}
-
-.product-info p{
-    font-family:Arial,sans-serif;
-    color:#666;
-    margin-bottom:15px;
-}
-
-.order-btn{
-    display:inline-block;
-    background:#c90000;
-    color:white;
-
-    padding:10px 22px;
-
-    border-radius:5px;
-    text-decoration:none;
-
-    font-family:Arial,sans-serif;
-    font-weight:bold;
-
-    transition:.3s;
-}
-
-.order-btn:hover{
-    background:#900000;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about{
-    background:#f5f5f5;
-}
-
-.about-content{
-    max-width:1000px;
-    margin:auto;
-    text-align:center;
-}
-
-.about-content p{
-    font-family:Arial,sans-serif;
-    font-size:18px;
-    line-height:1.8;
-    color:#444;
-}
-
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery-grid{
-    max-width:1200px;
-    margin:auto;
-
-    display:grid;
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:20px;
-}
-
-.gallery-grid img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:10px;
-
-    box-shadow:0 3px 12px rgba(0,0,0,.18);
-
-    transition:.3s;
-}
-
-.gallery-grid img:hover{
-    transform:scale(1.03);
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact{
-    background:#f5f5f5;
-}
-
-.contact-box{
-    max-width:800px;
-    margin:auto;
-
-    display:grid;
-    gap:18px;
-}
-
-.contact-item{
-    background:white;
-    padding:20px;
-    border-radius:8px;
-
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
-
-    text-align:center;
-}
-
-.contact-item h3{
-    color:#c80000;
-    margin-bottom:7px;
-}
-
-.contact-item p{
-    font-family:Arial,sans-serif;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    background:#111315;
-    color:white;
-    text-align:center;
-    padding:25px;
-    font-family:Arial,sans-serif;
-}
-
-footer span{
-    color:#e00000;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-    header{
-        padding:0 20px;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Zahid Metal</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
-    nav{
-        gap:15px;
+    body {
+      background: #f5f5f5;
+      color: #222;
     }
 
-    nav a{
-        font-size:14px;
+    /* HEADER */
+    header {
+      background: white;
+      padding: 12px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .product-grid{
-        grid-template-columns:
-            repeat(2,1fr);
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
-    .hero-title{
-        font-size:45px;
-    }
-}
-
-
-@media(max-width:600px){
-
-    header{
-        height:auto;
-        padding:10px 15px;
-        flex-direction:column;
-        gap:8px;
+    .logo img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
     }
 
-    .logo-area img{
-        width:55px;
-        height:50px;
+    .logo h2 {
+      font-size: 22px;
+      color: #b30000;
     }
 
-    .logo-text{
-        font-size:24px;
+    nav a {
+      text-decoration: none;
+      color: #222;
+      margin-left: 18px;
+      font-weight: bold;
     }
 
-    nav{
-        gap:12px;
-        flex-wrap:wrap;
-        justify-content:center;
+    nav a:hover {
+      color: #c40000;
     }
 
-    nav a{
-        font-size:13px;
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #ffffff, #eeeeee);
     }
 
-    .hero{
-        min-height:500px;
+    .hero h1 {
+      font-size: 40px;
+      color: #b00000;
+      margin-bottom: 12px;
     }
 
-    .hero-title{
-        font-size:38px;
+    .hero p {
+      font-size: 18px;
+      color: #555;
     }
 
-    .hero-text{
-        font-size:16px;
+    /* PRODUCTS */
+    .products {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    .hero-logo{
-        width:280px;
+    .products h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 30px;
     }
 
-    .product-grid{
-        grid-template-columns:1fr;
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
     }
 
-    .gallery-grid{
-        grid-template-columns:1fr;
+    .product {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+      transition: 0.3s;
     }
 
-    .section-title h2{
-        font-size:32px;
+    .product:hover {
+      transform: translateY(-5px);
     }
-}
 
-</style>
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 12px 0;
+    }
+
+    .order-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #b00000;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .order-btn:hover {
+      background: #800000;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .contact h2 {
+      margin-bottom: 15px;
+    }
+
+    .contact p {
+      margin: 8px 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    @media(max-width:600px) {
+      header {
+        padding: 10px 15px;
+      }
+
+      .logo img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .logo h2 {
+        font-size: 18px;
+      }
+
+      nav a {
+        margin-left: 8px;
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- HEADER -->
+  <header>
 
-<!-- =========================
-     HEADER
-========================= -->
+    <div class="logo">
+      <!-- এখানে তোর logo থাকবে -->
+      <img src="logo.png" alt="Zahid Metal Logo">
 
-<header>
-
-    <div class="logo-area">
-
-        <!-- YOUR LOGO -->
-        <img src="logo.png" alt="Zahid Metal Logo">
-
-        <div class="logo-text">
-            Zahid <span>Metal</span>
-        </div>
-
+      <h2>Zahid Metal</h2>
     </div>
-
 
     <nav>
-
-        <a href="#home" class="active">Home</a>
-
-        <a href="#about">About Us</a>
-
-        <a href="#products">Products</a>
-
-        <a href="#gallery">Gallery</a>
-
-        <a href="#contact">Contact Us</a>
-
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
     </nav>
 
-</header>
+  </header>
 
 
+  <!-- HOME -->
+  <section class="hero" id="home">
 
-<!-- =========================
-     HOME / HERO
-========================= -->
-
-<section class="hero" id="home">
-
-    <div class="hero-content">
-
-        <!-- BIG LOGO -->
-        <img
-            src="logo.png"
-            class="hero-logo"
-            alt="Zahid Metal"
-        >
-
-        <div class="hero-title">
-
-            <span class="black">Zahid</span>
-            <span class="red">Metal</span>
-
-        </div>
-
-        <div class="hero-line"></div>
-
-        <div class="hero-text">
-            All Kinds of Metallic & Wooden Gift Item
-        </div>
-
-        <div class="flower">
-            ❧ ❀ ❧
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     PRODUCTS
-========================= -->
-
-<section class="section products" id="products">
-
-    <div class="section-title">
-
-        <div class="section-decoration">
-            ──◇──
-        </div>
-
-        <h2>
-            Our <span>Products</span>
-        </h2>
-
-        <div class="section-heart">
-            ── ♥ ──
-        </div>
-
-    </div>
-
-
-    <div class="product-grid">
-
-
-        <!-- PRODUCT 1 -->
-
-        <div class="product-card">
-
-            <img
-                src="product1.jpg"
-                class="product-image"
-                alt="Metal Wall Art"
-            >
-
-            <div class="product-info">
-
-                <h3>Metal Wall Art</h3>
-
-                <p>
-                    Beautiful decorative metal wall art.
-                </p>
-
-                <a
-                    href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
-                    class="order-btn"
-                    target="_blank"
-                >
-                    Order Now
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 2 -->
-
-        <div class="product-card">
-
-            <img
-                src="product2.jpg"
-                class="product-image"
-                alt="Decorative Lantern"
-            >
-
-            <div class="product-info">
-
-                <h3>Decorative Lantern</h3>
-
-                <p>
-                    Stylish handmade decorative lantern.
-                </p>
-
-                <a
-                    href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
-                    class="order-btn"
-                    target="_blank"
-                >
-                    Order Now
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 3 -->
-
-        <div class="product-card">
-
-            <img
-                src="product3.jpg"
-                class="product-image"
-                alt="Metal Flower Vase"
-            >
-
-            <div class="product-info">
-
-                <h3>Metal Flower Vase</h3>
-
-                <p>
-                    Elegant metallic flower vase.
-                </p>
-
-                <a
-                    href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
-                    class="order-btn"
-                    target="_blank"
-                >
-                    Order Now
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- PRODUCT 4 -->
-
-        <div class="product-card">
-
-            <img
-                src="product4.jpg"
-                class="product-image"
-                alt="Wooden Gift Box"
-            >
-
-            <div class="product-info">
-
-                <h3>Wooden Gift Box</h3>
-
-                <p>
-                    Premium wooden gift box.
-                </p>
-
-                <a
-                    href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
-                    class="order-btn"
-                    target="_blank"
-                >
-                    Order Now
-                </a>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     ABOUT US
-========================= -->
-
-<section class="section about" id="about">
-
-    <div class="section-title">
-
-        <div class="section-decoration">
-            ──◇──
-        </div>
-
-        <h2>
-            About <span>Us</span>
-        </h2>
-
-    </div>
-
-
-    <div class="about-content">
-
-        <p>
-            Welcome to Zahid Metal.
-            We create and provide quality metallic
-            and wooden gift items with beautiful
-            designs and excellent craftsmanship.
-        </p>
-
-        <br>
-
-        <p>
-            Our goal is to provide unique,
-            beautiful and affordable products
-            for your home, office and special occasions.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     GALLERY
-========================= -->
-
-<section class="section" id="gallery">
-
-    <div class="section-title">
-
-        <div class="section-decoration">
-            ──◇──
-        </div>
-
-        <h2>
-            Our <span>Gallery</span>
-        </h2>
-
-    </div>
-
-
-    <div class="gallery-grid">
-
-        <img src="gallery1.jpg" alt="Zahid Metal Product">
-
-        <img src="gallery2.jpg" alt="Zahid Metal Product">
-
-        <img src="gallery3.jpg" alt="Zahid Metal Product">
-
-        <img src="gallery4.jpg" alt="Zahid Metal Product">
-
-        <img src="gallery5.jpg" alt="Zahid Metal Product">
-
-        <img src="gallery6.jpg" alt="Zahid Metal Product">
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="section contact" id="contact">
-
-    <div class="section-title">
-
-        <div class="section-decoration">
-            ──◇──
-        </div>
-
-        <h2>
-            Contact <span>Us</span>
-        </h2>
-
-    </div>
-
-
-    <div class="contact-box">
-
-
-        <div class="contact-item">
-
-            <h3>📞 Phone</h3>
-
-            <p>
-                01XXXXXXXXX
-            </p>
-
-        </div>
-
-
-        <div class="contact-item">
-
-            <h3>📧 Email</h3>
-
-            <p>
-                zahidmetal@example.com
-            </p>
-
-        </div>
-
-
-        <div class="contact-item">
-
-            <h3>📍 Address</h3>
-
-            <p>
-                Bangladesh
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
+    <h1>Zahid Metal</h1>
 
     <p>
-        © 2026 <span>Zahid Metal</span>.
-        All Rights Reserved.
+      Quality Metal Products at the Best Price
     </p>
 
-</footer>
+  </section>
 
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+
+    <h2>Our Products</h2>
+
+    <div class="product-container">
+
+      <!-- PRODUCT 1 -->
+      <div class="product">
+
+        <img src="product1.jpg" alt="Product 1">
+
+        <h3>Metal Product 1</h3>
+
+        <a
+          class="order-btn"
+          href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
+          target="_blank">
+          Order Now
+        </a>
+
+      </div>
+
+
+      <!-- PRODUCT 2 -->
+      <div class="product">
+
+        <img src="product2.jpg" alt="Product 2">
+
+        <h3>Metal Product 2</h3>
+
+        <a
+          class="order-btn"
+          href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
+          target="_blank">
+          Order Now
+        </a>
+
+      </div>
+
+
+      <!-- PRODUCT 3 -->
+      <div class="product">
+
+        <img src="product3.jpg" alt="Product 3">
+
+        <h3>Metal Product 3</h3>
+
+        <a
+          class="order-btn"
+          href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
+          target="_blank">
+          Order Now
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+
+    <h2>Contact Us</h2>
+
+    <p>📞 Phone: 01XXXXXXXXX</p>
+
+    <p>📧 Email: zahidmetal@example.com</p>
+
+    <p>📍 Bangladesh</p>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <p>© 2026 Zahid Metal. All Rights Reserved.</p>
+
+  </footer>
 
 </body>
 </html>
+```
