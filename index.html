@@ -1,10 +1,11 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zahid Metal</title>
+<title>Zahid Metal BD</title>
 
 <style>
 *{
@@ -18,22 +19,23 @@ html{
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Arial,Helvetica,sans-serif;
     background:#f5f5f5;
     color:#222;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
+
 header{
     background:#111;
     color:#fff;
-    padding:14px 7%;
+    padding:14px 6%;
     display:flex;
     align-items:center;
     justify-content:space-between;
     position:sticky;
     top:0;
-    z-index:1000;
+    z-index:999;
     box-shadow:0 3px 12px rgba(0,0,0,.25);
 }
 
@@ -44,10 +46,10 @@ header{
 }
 
 .logo{
-    width:55px;
-    height:55px;
-    object-fit:contain;
+    width:58px;
+    height:58px;
     border-radius:50%;
+    object-fit:contain;
     background:#fff;
 }
 
@@ -56,40 +58,41 @@ header{
 }
 
 .logo-text p{
-    font-size:12px;
     color:#bbb;
+    font-size:12px;
     margin-top:3px;
 }
 
 nav{
     display:flex;
-    gap:25px;
+    gap:24px;
 }
 
 nav a{
     color:#fff;
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
 }
 
 nav a:hover{
     color:#ffcc00;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
-    min-height:520px;
+    min-height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+    padding:40px 20px;
+
     background:
     linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
     url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80")
     center/cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:#fff;
-    padding:40px 20px;
 }
 
 .hero-content{
@@ -97,7 +100,7 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:52px;
+    font-size:50px;
     margin-bottom:18px;
 }
 
@@ -106,13 +109,13 @@ nav a:hover{
 }
 
 .hero p{
-    font-size:19px;
+    font-size:18px;
     line-height:1.7;
     color:#eee;
 }
 
 .hero-buttons{
-    margin-top:30px;
+    margin-top:28px;
     display:flex;
     justify-content:center;
     gap:15px;
@@ -124,7 +127,6 @@ nav a:hover{
     border-radius:7px;
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
 }
 
 .btn-primary{
@@ -132,22 +134,15 @@ nav a:hover{
     color:#111;
 }
 
-.btn-primary:hover{
-    background:#fff;
-}
-
-.btn-dark{
+.btn-white{
     background:#fff;
     color:#111;
 }
 
-.btn-dark:hover{
-    background:#ddd;
-}
+/* ================= GENERAL ================= */
 
-/* SECTION */
 section{
-    padding:70px 7%;
+    padding:70px 6%;
 }
 
 .section-title{
@@ -156,7 +151,7 @@ section{
 }
 
 .section-title h2{
-    font-size:34px;
+    font-size:35px;
     margin-bottom:10px;
 }
 
@@ -164,30 +159,28 @@ section{
     color:#666;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
+
 .about{
     background:#fff;
 }
 
 .about-container{
     display:flex;
+    gap:45px;
     align-items:center;
-    gap:50px;
 }
 
-.about-image{
+.about-image,
+.about-text{
     flex:1;
 }
 
 .about-image img{
     width:100%;
-    height:380px;
+    height:350px;
     object-fit:cover;
     border-radius:12px;
-}
-
-.about-text{
-    flex:1;
 }
 
 .about-text h2{
@@ -198,21 +191,22 @@ section{
 .about-text p{
     color:#555;
     line-height:1.8;
-    margin-bottom:15px;
+    margin-bottom:14px;
 }
 
-/* PRODUCTS */
+/* ================= CATEGORIES ================= */
+
 .products{
     background:#f5f5f5;
 }
 
-.product-grid{
+.category-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
 }
 
-.product-card{
+.category-card{
     background:#fff;
     border-radius:12px;
     overflow:hidden;
@@ -220,63 +214,60 @@ section{
     transition:.3s;
 }
 
-.product-card:hover{
+.category-card:hover{
     transform:translateY(-7px);
-    box-shadow:0 8px 25px rgba(0,0,0,.18);
 }
 
-.product-image{
-    width:100%;
-    height:220px;
+.category-image{
+    height:210px;
     overflow:hidden;
-    background:#eee;
 }
 
-.product-image img{
+.category-image img{
     width:100%;
     height:100%;
     object-fit:cover;
     transition:.4s;
 }
 
-.product-card:hover .product-image img{
-    transform:scale(1.05);
+.category-card:hover img{
+    transform:scale(1.06);
 }
 
-.product-info{
+.category-info{
     padding:20px;
+    text-align:center;
 }
 
-.product-info h3{
+.category-info h3{
     font-size:20px;
     margin-bottom:8px;
 }
 
-.product-info p{
+.category-info p{
     color:#666;
     font-size:14px;
-    line-height:1.6;
-    min-height:45px;
+    line-height:1.5;
 }
 
-.product-btn{
+.order-btn{
     display:block;
-    text-align:center;
     background:#111;
     color:#fff;
-    padding:11px;
-    border-radius:6px;
     text-decoration:none;
+    padding:11px;
     margin-top:15px;
+    border-radius:6px;
     font-weight:bold;
 }
 
-.product-btn:hover{
+.order-btn:hover{
     background:#ffcc00;
     color:#111;
 }
 
-/* WHY US */
+/* ================= WHY ================= */
+
 .why-us{
     background:#fff;
 }
@@ -288,9 +279,9 @@ section{
 }
 
 .why-card{
-    padding:30px 20px;
     text-align:center;
     background:#f7f7f7;
+    padding:30px 20px;
     border-radius:12px;
 }
 
@@ -308,7 +299,8 @@ section{
     line-height:1.6;
 }
 
-/* ORDER */
+/* ================= ORDER ================= */
+
 .order{
     background:#111;
     color:#fff;
@@ -317,7 +309,7 @@ section{
 .order-container{
     max-width:700px;
     margin:auto;
-    background:#1c1c1c;
+    background:#1d1d1d;
     padding:35px;
     border-radius:12px;
 }
@@ -348,21 +340,21 @@ section{
 .form-group textarea{
     width:100%;
     padding:13px;
-    border:none;
+    border:0;
     border-radius:6px;
     outline:none;
     font-size:15px;
 }
 
 .form-group textarea{
-    height:110px;
+    height:100px;
     resize:vertical;
 }
 
 .submit-btn{
     width:100%;
     padding:14px;
-    border:none;
+    border:0;
     border-radius:7px;
     background:#ffcc00;
     color:#111;
@@ -375,7 +367,8 @@ section{
     background:#fff;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
+
 .contact{
     background:#fff;
 }
@@ -406,49 +399,41 @@ section{
     color:#666;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
     background:#090909;
     color:#fff;
     text-align:center;
-    padding:25px 15px;
+    padding:25px;
 }
 
 .footer-logo{
     width:60px;
     height:60px;
     object-fit:contain;
-    background:#fff;
     border-radius:50%;
+    background:#fff;
     margin-bottom:10px;
 }
 
 footer p{
     color:#aaa;
-    font-size:14px;
 }
 
-/* MOBILE */
-@media(max-width:1000px){
+/* ================= MOBILE ================= */
 
-    .product-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+@media(max-width:1100px){
 
-    .about-container{
-        flex-direction:column;
-    }
-
-    .why-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
+    .category-grid{
+        grid-template-columns:repeat(3,1fr);
     }
 }
 
-@media(max-width:700px){
+@media(max-width:800px){
 
     header{
-        padding:12px 5%;
+        padding:12px 4%;
     }
 
     nav{
@@ -459,6 +444,22 @@ footer p{
         font-size:12px;
     }
 
+    .about-container{
+        flex-direction:column;
+    }
+
+    .category-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .why-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px){
+
     .logo{
         width:45px;
         height:45px;
@@ -468,23 +469,23 @@ footer p{
         font-size:18px;
     }
 
-    .hero{
-        min-height:450px;
+    .logo-text p{
+        font-size:10px;
     }
 
     .hero h1{
-        font-size:36px;
+        font-size:34px;
     }
 
     .hero p{
-        font-size:16px;
+        font-size:15px;
     }
 
     section{
         padding:55px 5%;
     }
 
-    .product-grid{
+    .category-grid{
         grid-template-columns:1fr;
     }
 
@@ -497,19 +498,21 @@ footer p{
 
 <body>
 
-<!-- HEADER -->
+
+<!-- ================= HEADER ================= -->
 
 <header>
 
     <div class="logo-area">
 
-        <img src="images/logo.png"
-             class="logo"
-             alt="Zahid Metal Logo">
+        <img
+        src="images/logo.png"
+        class="logo"
+        alt="Zahid Metal Logo">
 
         <div class="logo-text">
             <h2>Zahid Metal</h2>
-            <p>Quality Metal Products</p>
+            <p>Quality Products</p>
         </div>
 
     </div>
@@ -525,7 +528,7 @@ footer p{
 </header>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
 <section class="hero" id="home">
 
@@ -536,9 +539,7 @@ footer p{
         </h1>
 
         <p>
-            Quality metal products at a reasonable price.
-            We provide reliable products and trusted service
-            for our customers.
+            All Kinds of Metallic & Wooden Gift Item
         </p>
 
         <div class="hero-buttons">
@@ -547,7 +548,7 @@ footer p{
                 View Products
             </a>
 
-            <a href="#order" class="btn btn-dark">
+            <a href="#order" class="btn btn-white">
                 Order Now
             </a>
 
@@ -558,7 +559,7 @@ footer p{
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section class="about" id="about">
 
@@ -568,7 +569,7 @@ footer p{
 
             <img
             src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80"
-            alt="Metal Work">
+            alt="Zahid Metal">
 
         </div>
 
@@ -577,19 +578,19 @@ footer p{
             <h2>About Zahid Metal</h2>
 
             <p>
-                Zahid Metal is committed to providing quality
-                metal products with dependable service.
+                Welcome to Zahid Metal. We provide quality
+                metallic and wooden gift products for different
+                occasions and purposes.
             </p>
 
             <p>
-                Our goal is to make it easy for customers to find
-                the products they need and place their orders
-                quickly and easily.
+                Our collection includes beautiful crests,
+                gift items, wooden products, awards and boxes.
             </p>
 
             <p>
-                We always try to maintain product quality,
-                reasonable pricing and customer satisfaction.
+                We focus on quality, reasonable pricing and
+                customer satisfaction.
             </p>
 
         </div>
@@ -599,7 +600,7 @@ footer p{
 </section>
 
 
-<!-- PRODUCTS -->
+<!-- ================= PRODUCTS ================= -->
 
 <section class="products" id="products">
 
@@ -608,37 +609,39 @@ footer p{
         <h2>Our Products</h2>
 
         <p>
-            Explore our available metal products
+            Choose your favorite category
         </p>
 
     </div>
 
 
-    <div class="product-grid">
+    <div class="category-grid">
 
 
-        <!-- PRODUCT 1 -->
+        <!-- CREST -->
 
-        <div class="product-card">
+        <div class="category-card">
 
-            <div class="product-image">
+            <div class="category-image">
 
                 <img
-                src="https://images.unsplash.com/photo-1597484662317-9bd7bdda7785?auto=format&fit=crop&w=700&q=80"
-                alt="Metal Gate">
+                src="https://images.unsplash.com/photo-1569511166187-97eb6e387a94?auto=format&fit=crop&w=700&q=80"
+                alt="Crest">
 
             </div>
 
-            <div class="product-info">
+            <div class="category-info">
 
-                <h3>Metal Gate</h3>
+                <h3>🏆 Crest</h3>
 
                 <p>
-                    Strong and durable metal gate
-                    for home and commercial use.
+                    Beautiful custom crest and
+                    recognition products.
                 </p>
 
-                <a href="#order" class="product-btn">
+                <a href="#order"
+                   class="order-btn"
+                   onclick="selectProduct('Crest')">
                     Order Now
                 </a>
 
@@ -647,28 +650,30 @@ footer p{
         </div>
 
 
-        <!-- PRODUCT 2 -->
+        <!-- GIFT ITEMS -->
 
-        <div class="product-card">
+        <div class="category-card">
 
-            <div class="product-image">
+            <div class="category-image">
 
                 <img
-                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=80"
-                alt="Steel Window Grill">
+                src="https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=700&q=80"
+                alt="Gift Items">
 
             </div>
 
-            <div class="product-info">
+            <div class="category-info">
 
-                <h3>Steel Window Grill</h3>
+                <h3>🎁 Gift Items</h3>
 
                 <p>
-                    Quality steel grill with strong
-                    and durable construction.
+                    Special gift items for birthdays,
+                    events and occasions.
                 </p>
 
-                <a href="#order" class="product-btn">
+                <a href="#order"
+                   class="order-btn"
+                   onclick="selectProduct('Gift Items')">
                     Order Now
                 </a>
 
@@ -677,28 +682,30 @@ footer p{
         </div>
 
 
-        <!-- PRODUCT 3 -->
+        <!-- WOODEN -->
 
-        <div class="product-card">
+        <div class="category-card">
 
-            <div class="product-image">
+            <div class="category-image">
 
                 <img
-                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80"
-                alt="Metal Chair">
+                src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=700&q=80"
+                alt="Wooden Products">
 
             </div>
 
-            <div class="product-info">
+            <div class="category-info">
 
-                <h3>Metal Chair</h3>
+                <h3>🪵 Wooden Products</h3>
 
                 <p>
-                    Simple and strong metal chair
-                    suitable for different spaces.
+                    Stylish wooden products with
+                    beautiful finishing.
                 </p>
 
-                <a href="#order" class="product-btn">
+                <a href="#order"
+                   class="order-btn"
+                   onclick="selectProduct('Wooden Products')">
                     Order Now
                 </a>
 
@@ -707,28 +714,30 @@ footer p{
         </div>
 
 
-        <!-- PRODUCT 4 -->
+        <!-- AWARDS -->
 
-        <div class="product-card">
+        <div class="category-card">
 
-            <div class="product-image">
+            <div class="category-image">
 
                 <img
-                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80"
-                alt="Metal Table">
+                src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=700&q=80"
+                alt="Awards">
 
             </div>
 
-            <div class="product-info">
+            <div class="category-info">
 
-                <h3>Metal Table</h3>
+                <h3>🥇 Awards</h3>
 
                 <p>
-                    Durable metal table designed
-                    for everyday use.
+                    Awards and recognition items
+                    for special achievements.
                 </p>
 
-                <a href="#order" class="product-btn">
+                <a href="#order"
+                   class="order-btn"
+                   onclick="selectProduct('Awards')">
                     Order Now
                 </a>
 
@@ -737,118 +746,30 @@ footer p{
         </div>
 
 
-        <!-- PRODUCT 5 -->
+        <!-- BOXES -->
 
-        <div class="product-card">
+        <div class="category-card">
 
-            <div class="product-image">
-
-                <img
-                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=80"
-                alt="Metal Rack">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Metal Rack</h3>
-
-                <p>
-                    Useful metal rack for storage
-                    and organization.
-                </p>
-
-                <a href="#order" class="product-btn">
-                    Order Now
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- PRODUCT 6 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
+            <div class="category-image">
 
                 <img
-                src="https://images.unsplash.com/photo-1615874694520-474822394e73?auto=format&fit=crop&w=700&q=80"
-                alt="Metal Shelf">
+                src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=700&q=80"
+                alt="Boxes">
 
             </div>
 
-            <div class="product-info">
+            <div class="category-info">
 
-                <h3>Metal Shelf</h3>
+                <h3>📦 Boxes</h3>
 
                 <p>
-                    Strong storage shelf for
-                    home, office and shop.
+                    Attractive boxes for gifts,
+                    products and presentation.
                 </p>
 
-                <a href="#order" class="product-btn">
-                    Order Now
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- PRODUCT 7 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <img
-                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=80"
-                alt="Steel Door">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Steel Door</h3>
-
-                <p>
-                    Reliable steel door with a
-                    strong metal structure.
-                </p>
-
-                <a href="#order" class="product-btn">
-                    Order Now
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- PRODUCT 8 -->
-
-        <div class="product-card">
-
-            <div class="product-image">
-
-                <img
-                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80"
-                alt="Metal Railing">
-
-            </div>
-
-            <div class="product-info">
-
-                <h3>Metal Railing</h3>
-
-                <p>
-                    Decorative and durable railing
-                    for different applications.
-                </p>
-
-                <a href="#order" class="product-btn">
+                <a href="#order"
+                   class="order-btn"
+                   onclick="selectProduct('Boxes')">
                     Order Now
                 </a>
 
@@ -861,7 +782,7 @@ footer p{
 </section>
 
 
-<!-- WHY US -->
+<!-- ================= WHY US ================= -->
 
 <section class="why-us">
 
@@ -875,6 +796,7 @@ footer p{
 
     </div>
 
+
     <div class="why-grid">
 
         <div class="why-card">
@@ -884,8 +806,8 @@ footer p{
             <h3>Quality Products</h3>
 
             <p>
-                We focus on providing good quality
-                metal products.
+                We focus on quality products
+                and good finishing.
             </p>
 
         </div>
@@ -898,8 +820,8 @@ footer p{
             <h3>Reasonable Price</h3>
 
             <p>
-                Our products are offered at
-                competitive prices.
+                We try to provide products
+                at reasonable prices.
             </p>
 
         </div>
@@ -912,8 +834,8 @@ footer p{
             <h3>Trusted Service</h3>
 
             <p>
-                Customer satisfaction is one of
-                our main priorities.
+                Customer satisfaction is
+                our priority.
             </p>
 
         </div>
@@ -923,7 +845,7 @@ footer p{
 </section>
 
 
-<!-- ORDER -->
+<!-- ================= ORDER ================= -->
 
 <section class="order" id="order">
 
@@ -944,13 +866,10 @@ footer p{
 
             <div class="form-group">
 
-                <label for="name">
-                    Your Name
-                </label>
+                <label>Your Name</label>
 
                 <input
                 type="text"
-                id="name"
                 name="name"
                 placeholder="Enter your name"
                 required>
@@ -960,13 +879,10 @@ footer p{
 
             <div class="form-group">
 
-                <label for="phone">
-                    Phone Number
-                </label>
+                <label>Phone Number</label>
 
                 <input
                 type="tel"
-                id="phone"
                 name="phone"
                 placeholder="Enter your phone number"
                 required>
@@ -976,9 +892,7 @@ footer p{
 
             <div class="form-group">
 
-                <label for="product">
-                    Select Product
-                </label>
+                <label>Select Product</label>
 
                 <select
                 id="product"
@@ -989,36 +903,24 @@ footer p{
                         Select a product
                     </option>
 
-                    <option value="Metal Gate">
-                        Metal Gate
+                    <option value="Crest">
+                        🏆 Crest
                     </option>
 
-                    <option value="Steel Window Grill">
-                        Steel Window Grill
+                    <option value="Gift Items">
+                        🎁 Gift Items
                     </option>
 
-                    <option value="Metal Chair">
-                        Metal Chair
+                    <option value="Wooden Products">
+                        🪵 Wooden Products
                     </option>
 
-                    <option value="Metal Table">
-                        Metal Table
+                    <option value="Awards">
+                        🥇 Awards
                     </option>
 
-                    <option value="Metal Rack">
-                        Metal Rack
-                    </option>
-
-                    <option value="Metal Shelf">
-                        Metal Shelf
-                    </option>
-
-                    <option value="Steel Door">
-                        Steel Door
-                    </option>
-
-                    <option value="Metal Railing">
-                        Metal Railing
+                    <option value="Boxes">
+                        📦 Boxes
                     </option>
 
                 </select>
@@ -1028,13 +930,10 @@ footer p{
 
             <div class="form-group">
 
-                <label for="quantity">
-                    Quantity
-                </label>
+                <label>Quantity</label>
 
                 <input
                 type="number"
-                id="quantity"
                 name="quantity"
                 min="1"
                 placeholder="Enter quantity"
@@ -1045,12 +944,9 @@ footer p{
 
             <div class="form-group">
 
-                <label for="address">
-                    Delivery Address
-                </label>
+                <label>Delivery Address</label>
 
                 <textarea
-                id="address"
                 name="address"
                 placeholder="Enter your delivery address"
                 required></textarea>
@@ -1060,14 +956,11 @@ footer p{
 
             <div class="form-group">
 
-                <label for="message">
-                    Additional Message
-                </label>
+                <label>Additional Message</label>
 
                 <textarea
-                id="message"
                 name="message"
-                placeholder="Anything else you want to tell us?"></textarea>
+                placeholder="Write any additional information"></textarea>
 
             </div>
 
@@ -1075,7 +968,9 @@ footer p{
             <button
             type="submit"
             class="submit-btn">
+
                 Submit Order
+
             </button>
 
         </form>
@@ -1085,7 +980,7 @@ footer p{
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
 
@@ -1102,6 +997,7 @@ footer p{
 
     <div class="contact-grid">
 
+
         <div class="contact-card">
 
             <div class="icon">📞</div>
@@ -1109,8 +1005,8 @@ footer p{
             <h3>Phone</h3>
 
             <p>
-                Contact us for product information
-                and orders.
+                Contact us for product
+                information and orders.
             </p>
 
         </div>
@@ -1147,7 +1043,7 @@ footer p{
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1162,5 +1058,20 @@ footer p{
 
 </footer>
 
+
+<script>
+
+function selectProduct(productName){
+
+    const productBox =
+        document.getElementById("product");
+
+    productBox.value = productName;
+
+}
+
+</script>
+
 </body>
 </html>
+```
