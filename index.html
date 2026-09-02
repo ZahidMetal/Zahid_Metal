@@ -1,307 +1,1166 @@
-```html
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Zahid Metal</title>
+<title>Zahid Metal</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f5f5;
+    color:#222;
+}
+
+/* HEADER */
+header{
+    background:#111;
+    color:#fff;
+    padding:14px 7%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 12px rgba(0,0,0,.25);
+}
+
+.logo-area{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:55px;
+    height:55px;
+    object-fit:contain;
+    border-radius:50%;
+    background:#fff;
+}
+
+.logo-text h2{
+    font-size:23px;
+}
+
+.logo-text p{
+    font-size:12px;
+    color:#bbb;
+    margin-top:3px;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffcc00;
+}
+
+/* HERO */
+.hero{
+    min-height:520px;
+    background:
+    linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80")
+    center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#fff;
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#ffcc00;
+}
+
+.hero p{
+    font-size:19px;
+    line-height:1.7;
+    color:#eee;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:13px 25px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#ffcc00;
+    color:#111;
+}
+
+.btn-primary:hover{
+    background:#fff;
+}
+
+.btn-dark{
+    background:#fff;
+    color:#111;
+}
+
+.btn-dark:hover{
+    background:#ddd;
+}
+
+/* SECTION */
+section{
+    padding:70px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* ABOUT */
+.about{
+    background:#fff;
+}
+
+.about-container{
+    display:flex;
+    align-items:center;
+    gap:50px;
+}
+
+.about-image{
+    flex:1;
+}
+
+.about-image img{
+    width:100%;
+    height:380px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+.about-text{
+    flex:1;
+}
+
+.about-text h2{
+    font-size:34px;
+    margin-bottom:18px;
+}
+
+.about-text p{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+/* PRODUCTS */
+.products{
+    background:#f5f5f5;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-7px);
+    box-shadow:0 8px 25px rgba(0,0,0,.18);
+}
+
+.product-image{
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    background:#eee;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.product-card:hover .product-image img{
+    transform:scale(1.05);
+}
+
+.product-info{
+    padding:20px;
+}
+
+.product-info h3{
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.product-info p{
+    color:#666;
+    font-size:14px;
+    line-height:1.6;
+    min-height:45px;
+}
+
+.product-btn{
+    display:block;
+    text-align:center;
+    background:#111;
+    color:#fff;
+    padding:11px;
+    border-radius:6px;
+    text-decoration:none;
+    margin-top:15px;
+    font-weight:bold;
+}
+
+.product-btn:hover{
+    background:#ffcc00;
+    color:#111;
+}
+
+/* WHY US */
+.why-us{
+    background:#fff;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.why-card{
+    padding:30px 20px;
+    text-align:center;
+    background:#f7f7f7;
+    border-radius:12px;
+}
+
+.why-icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.why-card h3{
+    margin-bottom:10px;
+}
+
+.why-card p{
+    color:#666;
+    line-height:1.6;
+}
+
+/* ORDER */
+.order{
+    background:#111;
+    color:#fff;
+}
+
+.order-container{
+    max-width:700px;
+    margin:auto;
+    background:#1c1c1c;
+    padding:35px;
+    border-radius:12px;
+}
+
+.order-container h2{
+    text-align:center;
+    margin-bottom:10px;
+}
+
+.order-container > p{
+    text-align:center;
+    color:#bbb;
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:7px;
+    font-weight:bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:13px;
+    border:none;
+    border-radius:6px;
+    outline:none;
+    font-size:15px;
+}
+
+.form-group textarea{
+    height:110px;
+    resize:vertical;
+}
+
+.submit-btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:7px;
+    background:#ffcc00;
+    color:#111;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.submit-btn:hover{
+    background:#fff;
+}
+
+/* CONTACT */
+.contact{
+    background:#fff;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.contact-card{
+    text-align:center;
+    padding:30px 20px;
+    background:#f6f6f6;
+    border-radius:12px;
+}
+
+.contact-card .icon{
+    font-size:35px;
+    margin-bottom:12px;
+}
+
+.contact-card h3{
+    margin-bottom:8px;
+}
+
+.contact-card p{
+    color:#666;
+}
+
+/* FOOTER */
+footer{
+    background:#090909;
+    color:#fff;
+    text-align:center;
+    padding:25px 15px;
+}
+
+.footer-logo{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+    background:#fff;
+    border-radius:50%;
+    margin-bottom:10px;
+}
+
+footer p{
+    color:#aaa;
+    font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:1000px){
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
-    body {
-      background: #f5f5f5;
-      color: #222;
+    .about-container{
+        flex-direction:column;
     }
 
-    /* HEADER */
-    header {
-      background: white;
-      padding: 12px 25px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      position: sticky;
-      top: 0;
-      z-index: 100;
+    .why-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:700px){
+
+    header{
+        padding:12px 5%;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    nav{
+        gap:10px;
     }
 
-    .logo img {
-      width: 60px;
-      height: 60px;
-      object-fit: contain;
+    nav a{
+        font-size:12px;
     }
 
-    .logo h2 {
-      font-size: 22px;
-      color: #b30000;
+    .logo{
+        width:45px;
+        height:45px;
     }
 
-    nav a {
-      text-decoration: none;
-      color: #222;
-      margin-left: 18px;
-      font-weight: bold;
+    .logo-text h2{
+        font-size:18px;
     }
 
-    nav a:hover {
-      color: #c40000;
+    .hero{
+        min-height:450px;
     }
 
-    /* HERO */
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #ffffff, #eeeeee);
+    .hero h1{
+        font-size:36px;
     }
 
-    .hero h1 {
-      font-size: 40px;
-      color: #b00000;
-      margin-bottom: 12px;
+    .hero p{
+        font-size:16px;
     }
 
-    .hero p {
-      font-size: 18px;
-      color: #555;
+    section{
+        padding:55px 5%;
     }
 
-    /* PRODUCTS */
-    .products {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
+    .product-grid{
+        grid-template-columns:1fr;
     }
 
-    .products h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 30px;
+    .order-container{
+        padding:25px 18px;
     }
-
-    .product-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-
-    .product {
-      background: white;
-      border-radius: 12px;
-      padding: 15px;
-      text-align: center;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-      transition: 0.3s;
-    }
-
-    .product:hover {
-      transform: translateY(-5px);
-    }
-
-    .product img {
-      width: 100%;
-      height: 200px;
-      object-fit: contain;
-      border-radius: 10px;
-    }
-
-    .product h3 {
-      margin: 12px 0;
-    }
-
-    .order-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background: #b00000;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-
-    .order-btn:hover {
-      background: #800000;
-    }
-
-    /* CONTACT */
-    .contact {
-      background: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .contact h2 {
-      margin-bottom: 15px;
-    }
-
-    .contact p {
-      margin: 8px 0;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 20px;
-    }
-
-    @media(max-width:600px) {
-      header {
-        padding: 10px 15px;
-      }
-
-      .logo img {
-        width: 50px;
-        height: 50px;
-      }
-
-      .logo h2 {
-        font-size: 18px;
-      }
-
-      nav a {
-        margin-left: 8px;
-        font-size: 13px;
-      }
-
-      .hero h1 {
-        font-size: 30px;
-      }
-    }
-  </style>
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
+<!-- HEADER -->
 
-    <div class="logo">
-      <!-- এখানে তোর logo থাকবে -->
-      <img src="logo.png" alt="Zahid Metal Logo">
+<header>
 
-      <h2>Zahid Metal</h2>
+    <div class="logo-area">
+
+        <img src="images/logo.png"
+             class="logo"
+             alt="Zahid Metal Logo">
+
+        <div class="logo-text">
+            <h2>Zahid Metal</h2>
+            <p>Quality Metal Products</p>
+        </div>
+
     </div>
 
     <nav>
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#order">Order</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-  </header>
+</header>
 
 
-  <!-- HOME -->
-  <section class="hero" id="home">
+<!-- HOME -->
 
-    <h1>Zahid Metal</h1>
+<section class="hero" id="home">
 
-    <p>
-      Quality Metal Products at the Best Price
-    </p>
+    <div class="hero-content">
 
-  </section>
+        <h1>
+            Welcome to <span>Zahid Metal</span>
+        </h1>
 
+        <p>
+            Quality metal products at a reasonable price.
+            We provide reliable products and trusted service
+            for our customers.
+        </p>
 
-  <!-- PRODUCTS -->
-  <section class="products" id="products">
+        <div class="hero-buttons">
 
-    <h2>Our Products</h2>
+            <a href="#products" class="btn btn-primary">
+                View Products
+            </a>
 
-    <div class="product-container">
+            <a href="#order" class="btn btn-dark">
+                Order Now
+            </a>
 
-      <!-- PRODUCT 1 -->
-      <div class="product">
-
-        <img src="product1.jpg" alt="Product 1">
-
-        <h3>Metal Product 1</h3>
-
-        <a
-          class="order-btn"
-          href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
-          target="_blank">
-          Order Now
-        </a>
-
-      </div>
-
-
-      <!-- PRODUCT 2 -->
-      <div class="product">
-
-        <img src="product2.jpg" alt="Product 2">
-
-        <h3>Metal Product 2</h3>
-
-        <a
-          class="order-btn"
-          href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
-          target="_blank">
-          Order Now
-        </a>
-
-      </div>
-
-
-      <!-- PRODUCT 3 -->
-      <div class="product">
-
-        <img src="product3.jpg" alt="Product 3">
-
-        <h3>Metal Product 3</h3>
-
-        <a
-          class="order-btn"
-          href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
-          target="_blank">
-          Order Now
-        </a>
-
-      </div>
+        </div>
 
     </div>
 
-  </section>
+</section>
 
 
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
+<!-- ABOUT -->
 
-    <h2>Contact Us</h2>
+<section class="about" id="about">
 
-    <p>📞 Phone: 01XXXXXXXXX</p>
+    <div class="about-container">
 
-    <p>📧 Email: zahidmetal@example.com</p>
+        <div class="about-image">
 
-    <p>📍 Bangladesh</p>
+            <img
+            src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80"
+            alt="Metal Work">
 
-  </section>
+        </div>
+
+        <div class="about-text">
+
+            <h2>About Zahid Metal</h2>
+
+            <p>
+                Zahid Metal is committed to providing quality
+                metal products with dependable service.
+            </p>
+
+            <p>
+                Our goal is to make it easy for customers to find
+                the products they need and place their orders
+                quickly and easily.
+            </p>
+
+            <p>
+                We always try to maintain product quality,
+                reasonable pricing and customer satisfaction.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-  <!-- FOOTER -->
-  <footer>
+<!-- PRODUCTS -->
 
-    <p>© 2026 Zahid Metal. All Rights Reserved.</p>
+<section class="products" id="products">
 
-  </footer>
+    <div class="section-title">
+
+        <h2>Our Products</h2>
+
+        <p>
+            Explore our available metal products
+        </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+        <!-- PRODUCT 1 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1597484662317-9bd7bdda7785?auto=format&fit=crop&w=700&q=80"
+                alt="Metal Gate">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Metal Gate</h3>
+
+                <p>
+                    Strong and durable metal gate
+                    for home and commercial use.
+                </p>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 2 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=700&q=80"
+                alt="Steel Window Grill">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Steel Window Grill</h3>
+
+                <p>
+                    Quality steel grill with strong
+                    and durable construction.
+                </p>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 3 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=700&q=80"
+                alt="Metal Chair">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Metal Chair</h3>
+
+                <p>
+                    Simple and strong metal chair
+                    suitable for different spaces.
+                </p>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 4 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80"
+                alt="Metal Table">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Metal Table</h3>
+
+                <p>
+                    Durable metal table designed
+                    for everyday use.
+                </p>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 5 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=700&q=80"
+                alt="Metal Rack">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Metal Rack</h3>
+
+                <p>
+                    Useful metal rack for storage
+                    and organization.
+                </p>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 6 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1615874694520-474822394e73?auto=format&fit=crop&w=700&q=80"
+                alt="Metal Shelf">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Metal Shelf</h3>
+
+                <p>
+                    Strong storage shelf for
+                    home, office and shop.
+                </p>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 7 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=700&q=80"
+                alt="Steel Door">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Steel Door</h3>
+
+                <p>
+                    Reliable steel door with a
+                    strong metal structure.
+                </p>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRODUCT 8 -->
+
+        <div class="product-card">
+
+            <div class="product-image">
+
+                <img
+                src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=700&q=80"
+                alt="Metal Railing">
+
+            </div>
+
+            <div class="product-info">
+
+                <h3>Metal Railing</h3>
+
+                <p>
+                    Decorative and durable railing
+                    for different applications.
+                </p>
+
+                <a href="#order" class="product-btn">
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- WHY US -->
+
+<section class="why-us">
+
+    <div class="section-title">
+
+        <h2>Why Choose Us?</h2>
+
+        <p>
+            Quality, value and trusted service.
+        </p>
+
+    </div>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="why-icon">⭐</div>
+
+            <h3>Quality Products</h3>
+
+            <p>
+                We focus on providing good quality
+                metal products.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">💰</div>
+
+            <h3>Reasonable Price</h3>
+
+            <p>
+                Our products are offered at
+                competitive prices.
+            </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+            <div class="why-icon">🤝</div>
+
+            <h3>Trusted Service</h3>
+
+            <p>
+                Customer satisfaction is one of
+                our main priorities.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ORDER -->
+
+<section class="order" id="order">
+
+    <div class="order-container">
+
+        <h2>Place Your Order</h2>
+
+        <p>
+            Fill in the information below to send your order.
+        </p>
+
+
+        <form
+        action="https://script.google.com/macros/s/AKfycbwGQKBAronNPG7Hqme-PAL1AycJuJNq9YMit0-wwOiKMWtkQIEE8hPgUEQgz/exec"
+        method="POST"
+        target="_blank">
+
+
+            <div class="form-group">
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your name"
+                required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter your phone number"
+                required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="product">
+                    Select Product
+                </label>
+
+                <select
+                id="product"
+                name="product"
+                required>
+
+                    <option value="">
+                        Select a product
+                    </option>
+
+                    <option value="Metal Gate">
+                        Metal Gate
+                    </option>
+
+                    <option value="Steel Window Grill">
+                        Steel Window Grill
+                    </option>
+
+                    <option value="Metal Chair">
+                        Metal Chair
+                    </option>
+
+                    <option value="Metal Table">
+                        Metal Table
+                    </option>
+
+                    <option value="Metal Rack">
+                        Metal Rack
+                    </option>
+
+                    <option value="Metal Shelf">
+                        Metal Shelf
+                    </option>
+
+                    <option value="Steel Door">
+                        Steel Door
+                    </option>
+
+                    <option value="Metal Railing">
+                        Metal Railing
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+                <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                placeholder="Enter quantity"
+                required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="address">
+                    Delivery Address
+                </label>
+
+                <textarea
+                id="address"
+                name="address"
+                placeholder="Enter your delivery address"
+                required></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="message">
+                    Additional Message
+                </label>
+
+                <textarea
+                id="message"
+                name="message"
+                placeholder="Anything else you want to tell us?"></textarea>
+
+            </div>
+
+
+            <button
+            type="submit"
+            class="submit-btn">
+                Submit Order
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            Get in touch with Zahid Metal.
+        </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <div class="icon">📞</div>
+
+            <h3>Phone</h3>
+
+            <p>
+                Contact us for product information
+                and orders.
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="icon">📍</div>
+
+            <h3>Location</h3>
+
+            <p>
+                Bangladesh
+            </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+            <div class="icon">📧</div>
+
+            <h3>Email</h3>
+
+            <p>
+                Contact Zahid Metal
+                for more information.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <img
+    src="images/logo.png"
+    class="footer-logo"
+    alt="Zahid Metal Logo">
+
+    <p>
+        © 2026 Zahid Metal. All Rights Reserved.
+    </p>
+
+</footer>
 
 </body>
 </html>
-```
