@@ -4,9 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Zahid Metal BD</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -18,7 +20,7 @@ html{
 }
 
 body{
-    font-family:"Noto Sans Bengali","SolaimanLipi",Arial,sans-serif;
+    font-family:Arial,"Noto Sans Bengali",sans-serif;
     background:#f5f5f5;
     color:#222;
 }
@@ -35,7 +37,6 @@ header{
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 3px 12px rgba(0,0,0,.3);
 }
 
 .logo-area{
@@ -57,14 +58,14 @@ header{
 }
 
 .logo-text p{
-    color:#aaa;
     font-size:11px;
+    color:#aaa;
 }
 
 nav{
     display:flex;
-    gap:15px;
     align-items:center;
+    gap:16px;
 }
 
 nav a{
@@ -85,35 +86,28 @@ nav a:hover{
     border-radius:6px;
 }
 
+
 /* ================= HERO ================= */
 
 .hero{
-    min-height:480px;
+    min-height:430px;
     display:flex;
     align-items:center;
     justify-content:center;
     text-align:center;
-    color:white;
     padding:40px 20px;
 
     background:
     linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.68)),
     url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1600&q=80")
     center/cover;
-}
-
-.hero-logo{
-    width:95px;
-    height:95px;
-    object-fit:contain;
-    background:white;
-    border-radius:50%;
-    margin-bottom:15px;
+    
+    color:white;
 }
 
 .hero h1{
     font-size:45px;
-    margin-bottom:12px;
+    margin-bottom:15px;
 }
 
 .hero h1 span{
@@ -121,8 +115,7 @@ nav a:hover{
 }
 
 .hero p{
-    font-size:19px;
-    line-height:1.7;
+    font-size:18px;
 }
 
 .hero-buttons{
@@ -131,7 +124,7 @@ nav a:hover{
 
 .hero-buttons a{
     display:inline-block;
-    padding:13px 22px;
+    padding:13px 23px;
     margin:5px;
     border-radius:7px;
     text-decoration:none;
@@ -147,6 +140,7 @@ nav a:hover{
     background:white;
     color:#111;
 }
+
 
 /* ================= SECTION ================= */
 
@@ -168,39 +162,24 @@ section{
     color:#666;
 }
 
+
 /* ================= ABOUT ================= */
 
 .about{
     background:white;
 }
 
-.about-content{
-    display:flex;
-    gap:40px;
-    align-items:center;
+.about-box{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
 }
 
-.about-content img{
-    width:50%;
-    height:330px;
-    object-fit:cover;
-    border-radius:12px;
-}
-
-.about-text{
-    flex:1;
-}
-
-.about-text h3{
-    font-size:28px;
-    margin-bottom:14px;
-}
-
-.about-text p{
-    color:#555;
+.about-box p{
     line-height:1.9;
-    margin-bottom:10px;
+    color:#555;
 }
+
 
 /* ================= PRODUCTS ================= */
 
@@ -214,8 +193,8 @@ section{
 
 .category-title{
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
     border-left:5px solid #ffcc00;
     padding-left:12px;
     margin-bottom:20px;
@@ -233,58 +212,85 @@ section{
     font-size:13px;
 }
 
+
+/* ================= PRODUCT GRID ================= */
+
 .product-grid{
     display:grid;
     grid-template-columns:repeat(5,1fr);
-    gap:17px;
+    gap:18px;
 }
 
 .product{
     background:white;
-    border-radius:10px;
+    border-radius:12px;
     overflow:hidden;
-    box-shadow:0 3px 12px rgba(0,0,0,.1);
-    transition:.3s;
+    box-shadow:0 3px 12px rgba(0,0,0,.10);
+    transition:.25s;
 }
 
 .product:hover{
     transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,.16);
 }
 
-.product img{
-    width:100%;
+
+/* DEMO EMOJI PHOTO */
+
+.product-photo{
     height:170px;
-    object-fit:cover;
-    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eee;
+    font-size:75px;
 }
+
+
+/* PRODUCT DETAILS */
 
 .product-info{
-    padding:13px;
-    text-align:center;
+    padding:15px;
 }
 
 .product-info h4{
+    font-size:17px;
+    margin-bottom:10px;
+}
+
+.price{
+    font-weight:bold;
     font-size:16px;
     margin-bottom:6px;
 }
 
-.product-info p{
-    color:#777;
-    font-size:12px;
-    line-height:1.5;
+.size{
+    font-size:13px;
+    color:#555;
+    margin-bottom:9px;
 }
+
+.details{
+    font-size:12px;
+    line-height:1.6;
+    color:#666;
+    min-height:58px;
+}
+
+
+/* BUTTONS */
 
 .buttons{
     display:flex;
-    gap:5px;
-    margin-top:10px;
+    gap:7px;
+    margin-top:13px;
 }
 
 .buttons button{
     flex:1;
-    padding:8px 3px;
-    border:0;
-    border-radius:5px;
+    border:none;
+    padding:9px 4px;
+    border-radius:6px;
     cursor:pointer;
     font-family:inherit;
     font-weight:bold;
@@ -293,6 +299,7 @@ section{
 
 .cart-btn{
     background:#eee;
+    color:#111;
 }
 
 .order-btn{
@@ -305,6 +312,7 @@ section{
     color:#111;
 }
 
+
 /* ================= CART ================= */
 
 .cart{
@@ -312,37 +320,36 @@ section{
 }
 
 .cart-box{
-    max-width:850px;
+    max-width:800px;
     margin:auto;
-    background:#f7f7f7;
+    background:#f5f5f5;
     padding:25px;
-    border-radius:10px;
+    border-radius:12px;
 }
 
 .cart-item{
     display:flex;
-    align-items:center;
     justify-content:space-between;
+    align-items:center;
     padding:12px 0;
     border-bottom:1px solid #ddd;
 }
 
 .remove{
+    border:none;
     background:#dc2626;
     color:white;
-    border:0;
-    padding:6px 10px;
+    padding:7px 10px;
     border-radius:5px;
     cursor:pointer;
-    font-family:inherit;
 }
 
 .cart-total{
-    text-align:right;
     margin-top:18px;
-    font-size:19px;
+    text-align:right;
     font-weight:bold;
 }
+
 
 /* ================= ORDER ================= */
 
@@ -352,38 +359,30 @@ section{
 }
 
 .order-box{
-    max-width:700px;
+    max-width:650px;
     margin:auto;
-    background:#1d1d1d;
-    padding:30px;
+    background:#1c1c1c;
+    padding:35px;
     border-radius:12px;
     text-align:center;
-}
-
-.order-box h2{
-    margin-bottom:10px;
 }
 
 .order-box p{
     color:#bbb;
     line-height:1.7;
-    margin-bottom:20px;
+    margin:15px 0 25px;
 }
 
-.google-form-btn{
+.google-form{
     display:inline-block;
     background:#ffcc00;
     color:#111;
     text-decoration:none;
-    padding:15px 28px;
+    padding:14px 25px;
     border-radius:7px;
     font-weight:bold;
-    font-size:17px;
 }
 
-.google-form-btn:hover{
-    background:white;
-}
 
 /* ================= CONTACT ================= */
 
@@ -399,20 +398,21 @@ section{
 
 .contact-card{
     background:#f5f5f5;
+    padding:25px;
     text-align:center;
-    padding:27px;
     border-radius:10px;
 }
 
-.icon{
+.contact-card .icon{
     font-size:35px;
     margin-bottom:10px;
 }
 
 .contact-card p{
     color:#666;
-    line-height:1.6;
+    margin-top:7px;
 }
+
 
 /* ================= FOOTER ================= */
 
@@ -423,46 +423,11 @@ footer{
     padding:25px;
 }
 
-.footer-logo{
-    width:55px;
-    height:55px;
-    object-fit:contain;
-    border-radius:50%;
-    background:white;
-    margin-bottom:7px;
-}
-
 footer p{
     color:#aaa;
     font-size:13px;
 }
 
-/* ================= MODAL ================= */
-
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,.85);
-    z-index:3000;
-    align-items:center;
-    justify-content:center;
-}
-
-.modal img{
-    max-width:90%;
-    max-height:85vh;
-    border-radius:10px;
-}
-
-.close{
-    position:absolute;
-    right:30px;
-    top:15px;
-    color:white;
-    font-size:45px;
-    cursor:pointer;
-}
 
 /* ================= MOBILE ================= */
 
@@ -471,13 +436,10 @@ footer p{
     .product-grid{
         grid-template-columns:repeat(3,1fr);
     }
+
 }
 
 @media(max-width:800px){
-
-    header{
-        padding:10px 3%;
-    }
 
     nav{
         gap:7px;
@@ -487,14 +449,6 @@ footer p{
         font-size:11px;
     }
 
-    .about-content{
-        flex-direction:column;
-    }
-
-    .about-content img{
-        width:100%;
-    }
-
     .product-grid{
         grid-template-columns:repeat(2,1fr);
     }
@@ -502,13 +456,18 @@ footer p{
     .contact-grid{
         grid-template-columns:1fr;
     }
+
 }
 
 @media(max-width:500px){
 
+    header{
+        padding:8px 3%;
+    }
+
     .logo{
-        width:43px;
-        height:43px;
+        width:45px;
+        height:45px;
     }
 
     .logo-text h2{
@@ -525,7 +484,7 @@ footer p{
     }
 
     .hero h1{
-        font-size:31px;
+        font-size:30px;
     }
 
     .hero p{
@@ -536,14 +495,14 @@ footer p{
         grid-template-columns:1fr;
     }
 
-    section{
-        padding:45px 4%;
-    }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- ================= HEADER ================= -->
 
@@ -551,16 +510,23 @@ footer p{
 
 <div class="logo-area">
 
-<img src="images/logo.png"
-     class="logo"
-     alt="Zahid Metal Logo">
+<!-- শুধু এই এক জায়গাতেই logo -->
+
+<img
+src="images/logo.png"
+class="logo"
+alt="Zahid Metal Logo">
 
 <div class="logo-text">
+
 <h2>Zahid Metal BD</h2>
+
 <p>মানসম্মত পণ্যের বিশ্বস্ত ঠিকানা</p>
+
 </div>
 
 </div>
+
 
 <nav>
 
@@ -575,12 +541,13 @@ footer p{
 </a>
 
 <a href="#order" class="order-nav">
-অর্ডার করুন
+অর্ডার
 </a>
 
 </nav>
 
 </header>
+
 
 
 <!-- ================= HOME ================= -->
@@ -589,16 +556,12 @@ footer p{
 
 <div>
 
-<img src="images/logo.png"
-     class="hero-logo"
-     alt="Zahid Metal Logo">
-
 <h1>
 স্বাগতম <span>Zahid Metal BD</span>-এ
 </h1>
 
 <p>
-সকল ধরনের মেটালিক ও কাঠের গিফট আইটেম
+ক্রেস্ট • গিফট আইটেম • কাঠের পণ্য • অ্যাওয়ার্ড • বক্স
 </p>
 
 <div class="hero-buttons">
@@ -618,6 +581,7 @@ footer p{
 </section>
 
 
+
 <!-- ================= ABOUT ================= -->
 
 <section class="about" id="about">
@@ -631,37 +595,23 @@ footer p{
 </div>
 
 
-<div class="about-content">
-
-<img
-src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?auto=format&fit=crop&w=900&q=80"
-alt="Zahid Metal">
-
-<div class="about-text">
-
-<h3>Zahid Metal BD</h3>
+<div class="about-box">
 
 <p>
-আমরা বিভিন্ন ধরনের মানসম্মত মেটালিক ও কাঠের
-গিফট আইটেম সরবরাহ করি।
+Zahid Metal BD-তে বিভিন্ন ধরনের মানসম্মত
+ক্রেস্ট, গিফট আইটেম, কাঠের পণ্য,
+অ্যাওয়ার্ড এবং বক্স পাওয়া যায়।
 </p>
 
 <p>
-আমাদের পণ্যের মধ্যে রয়েছে ক্রেস্ট,
-গিফট আইটেম, কাঠের পণ্য, অ্যাওয়ার্ড
-এবং বিভিন্ন ধরনের বক্স।
+প্রয়োজন অনুযায়ী বিভিন্ন পণ্যে
+নাম, লেখা ও ডিজাইন কাস্টমাইজ করা যাবে।
 </p>
-
-<p>
-মানসম্মত পণ্য, সুন্দর ডিজাইন এবং
-গ্রাহকের সন্তুষ্টি আমাদের প্রধান লক্ষ্য।
-</p>
-
-</div>
 
 </div>
 
 </section>
+
 
 
 <!-- ================= PRODUCTS ================= -->
@@ -673,14 +623,16 @@ alt="Zahid Metal">
 <h2>আমাদের পণ্যসমূহ</h2>
 
 <p>
-৫টি ক্যাটাগরি • প্রতিটিতে ২০টি করে পণ্য
+৫টি Category • প্রতিটিতে ২০টি Product • মোট ১০০টি Product
 </p>
 
 </div>
 
+
 <div id="productArea"></div>
 
 </section>
+
 
 
 <!-- ================= CART ================= -->
@@ -691,19 +643,21 @@ alt="Zahid Metal">
 
 <h2>🛒 আমার কার্ট</h2>
 
-<p>আপনার নির্বাচিত পণ্য</p>
+<p>নির্বাচিত পণ্য</p>
 
 </div>
+
 
 <div class="cart-box">
 
 <div id="cartItems">
 
 <p style="text-align:center;color:#777">
-আপনার কার্ট এখন খালি।
+কার্ট এখন খালি।
 </p>
 
 </div>
+
 
 <div class="cart-total">
 
@@ -717,6 +671,7 @@ alt="Zahid Metal">
 </section>
 
 
+
 <!-- ================= ORDER ================= -->
 
 <section class="order" id="order">
@@ -726,14 +681,15 @@ alt="Zahid Metal">
 <h2>📋 অর্ডার করুন</h2>
 
 <p>
-অর্ডার করার জন্য নিচের বাটনে ক্লিক করুন।
-আপনাকে সরাসরি আমাদের Google Form-এ নিয়ে যাওয়া হবে।
+পছন্দের পণ্য নির্বাচন করার পর অর্ডার করতে
+নিচের বাটনে ক্লিক করুন।
 </p>
+
 
 <a
 href="https://docs.google.com/forms/d/e/1FAIpQLSfRaM8WR0K1rzPm37NlXuZrdBZF-a_UgFprh_RQFay0uUMYvw/viewform?usp=dialog"
 target="_blank"
-class="google-form-btn">
+class="google-form">
 
 Google Form-এ অর্ডার করুন
 
@@ -744,6 +700,7 @@ Google Form-এ অর্ডার করুন
 </section>
 
 
+
 <!-- ================= CONTACT ================= -->
 
 <section class="contact" id="contact">
@@ -752,12 +709,13 @@ Google Form-এ অর্ডার করুন
 
 <h2>যোগাযোগ করুন</h2>
 
-<p>Zahid Metal BD-এর সাথে যোগাযোগ করুন</p>
+<p>Zahid Metal BD</p>
 
 </div>
 
 
 <div class="contact-grid">
+
 
 <div class="contact-card">
 
@@ -766,8 +724,7 @@ Google Form-এ অর্ডার করুন
 <h3>ফোন</h3>
 
 <p>
-অর্ডার ও পণ্যের তথ্যের জন্য
-আমাদের সাথে যোগাযোগ করুন।
+অর্ডার ও পণ্যের তথ্যের জন্য যোগাযোগ করুন।
 </p>
 
 </div>
@@ -779,7 +736,9 @@ Google Form-এ অর্ডার করুন
 
 <h3>ঠিকানা</h3>
 
-<p>বাংলাদেশ</p>
+<p>
+বাংলাদেশ
+</p>
 
 </div>
 
@@ -791,212 +750,216 @@ Google Form-এ অর্ডার করুন
 <h3>ই-মেইল</h3>
 
 <p>
-বিস্তারিত তথ্যের জন্য
-আমাদের সাথে যোগাযোগ করুন।
+যোগাযোগের জন্য আমাদের মেসেজ করুন।
 </p>
 
 </div>
+
 
 </div>
 
 </section>
 
 
+
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-<img
-src="images/logo.png"
-class="footer-logo"
-alt="Zahid Metal Logo">
-
 <p>
-© ২০২৬ Zahid Metal BD — সর্বস্বত্ব সংরক্ষিত
+© 2026 Zahid Metal BD — সর্বস্বত্ব সংরক্ষিত
 </p>
 
 </footer>
 
 
-<!-- IMAGE MODAL -->
-
-<div class="modal" id="modal">
-
-<span class="close" onclick="closeImage()">×</span>
-
-<img id="bigImage">
-
-</div>
-
 
 <script>
 
+
 /* =========================================
    ৫ CATEGORY × ২০ PRODUCT
-   মোট ১০০টি DEMO PRODUCT
 ========================================= */
+
 
 const categories = [
 
+/* ================= CREST ================= */
+
 {
 name:"🏆 ক্রেস্ট",
+emoji:"🏆",
+
 products:[
-"গোল্ড ক্রেস্ট",
-"সিলভার ক্রেস্ট",
-"মেটাল ক্রেস্ট",
-"কাঠের ক্রেস্ট",
-"অ্যাক্রিলিক ক্রেস্ট",
-"অফিস ক্রেস্ট",
-"স্কুল ক্রেস্ট",
-"কলেজ ক্রেস্ট",
-"ক্লাব ক্রেস্ট",
-"স্পোর্টস ক্রেস্ট",
-"চ্যাম্পিয়ন ক্রেস্ট",
-"সম্মাননা ক্রেস্ট",
-"স্মারক ক্রেস্ট",
-"বিশেষ ক্রেস্ট",
-"ডিজাইন ক্রেস্ট",
-"প্রিমিয়াম ক্রেস্ট",
-"মেডেল ক্রেস্ট",
-"ইভেন্ট ক্রেস্ট",
-"কাস্টম ক্রেস্ট",
-"মিনি ক্রেস্ট"
+
+["Gold Crest","৳450","8 × 6 inch","Premium metal crest, সুন্দর ফিনিশিং।"],
+["Silver Crest","৳400","8 × 6 inch","সিলভার ফিনিশিং সহ আকর্ষণীয় ক্রেস্ট।"],
+["Metal Crest","৳500","9 × 7 inch","মজবুত মেটাল দিয়ে তৈরি।"],
+["Wood Crest","৳550","10 × 8 inch","কাঠ ও মেটালের সুন্দর সমন্বয়।"],
+["Acrylic Crest","৳600","10 × 8 inch","স্বচ্ছ অ্যাক্রিলিক ডিজাইন।"],
+["Office Crest","৳480","8 × 6 inch","অফিস সম্মাননা দেওয়ার জন্য উপযোগী।"],
+["School Crest","৳420","7 × 5 inch","স্কুল অনুষ্ঠান ও পুরস্কারের জন্য।"],
+["College Crest","৳500","8 × 6 inch","কলেজ অনুষ্ঠান ও সম্মাননার জন্য।"],
+["Club Crest","৳450","8 × 6 inch","ক্লাব ও সংগঠনের জন্য।"],
+["Sports Crest","৳550","9 × 7 inch","খেলাধুলার পুরস্কারের জন্য।"],
+["Champion Crest","৳650","10 × 8 inch","চ্যাম্পিয়ন সম্মাননার জন্য।"],
+["Honour Crest","৳600","10 × 8 inch","বিশেষ সম্মাননা দেওয়ার জন্য।"],
+["Memorial Crest","৳580","9 × 7 inch","স্মারক হিসেবে ব্যবহারযোগ্য।"],
+["Special Crest","৳700","11 × 9 inch","বিশেষ অনুষ্ঠানের জন্য।"],
+["Design Crest","৳750","11 × 9 inch","আকর্ষণীয় কাস্টম ডিজাইন।"],
+["Premium Crest","৳900","12 × 10 inch","প্রিমিয়াম কোয়ালিটি ক্রেস্ট।"],
+["Medal Crest","৳500","8 × 6 inch","মেডেলসহ ক্রেস্ট ডিজাইন।"],
+["Event Crest","৳520","9 × 7 inch","ইভেন্ট ও অনুষ্ঠান উপযোগী।"],
+["Custom Crest","৳800","Custom","নিজের ডিজাইন ও লেখা দেওয়া যাবে।"],
+["Mini Crest","৳300","5 × 4 inch","ছোট সাইজের ক্রেস্ট।"]
+
 ]
 },
+
+
+/* ================= GIFT ================= */
 
 {
 name:"🎁 গিফট আইটেম",
+emoji:"🎁",
+
 products:[
-"গিফট সেট",
-"মেটাল গিফট",
-"কাপ গিফট",
-"পেন গিফট",
-"কী-রিং গিফট",
-"টেবিল গিফট",
-"ফটো গিফট",
-"নেমপ্লেট গিফট",
-"অফিস গিফট",
-"জন্মদিনের গিফট",
-"বিবাহের গিফট",
-"স্মারক গিফট",
-"কর্পোরেট গিফট",
-"কাস্টম গিফট",
-"প্রিমিয়াম গিফট",
-"ডেস্ক গিফট",
-"শুভেচ্ছা গিফট",
-"বিশেষ গিফট",
-"স্মৃতি গিফট",
-"গিফট বক্স"
+
+["Gift Set","৳700","10 × 8 inch","সুন্দর গিফট সেট।"],
+["Metal Gift","৳600","8 × 6 inch","প্রিমিয়াম মেটাল গিফট।"],
+["Cup Gift","৳350","Standard","নাম বা লেখা দেওয়া যাবে।"],
+["Pen Gift","৳300","Standard","অফিস ও ব্যক্তিগত উপহারের জন্য।"],
+["Key Ring Gift","৳180","2.5 inch","কাস্টম নাম দেওয়া যাবে।"],
+["Table Gift","৳500","7 × 5 inch","টেবিল ডেকোরেশন উপহার।"],
+["Photo Gift","৳650","8 × 6 inch","ছবি দিয়ে কাস্টম করা যাবে।"],
+["Nameplate Gift","৳450","8 × 3 inch","নাম ও লেখা দেওয়া যাবে।"],
+["Office Gift","৳550","8 × 6 inch","অফিসের জন্য উপযোগী।"],
+["Birthday Gift","৳600","10 × 8 inch","জন্মদিনের উপহার।"],
+["Wedding Gift","৳800","12 × 10 inch","বিবাহের উপহারের জন্য।"],
+["Memorial Gift","৳650","9 × 7 inch","স্মরণীয় উপহার।"],
+["Corporate Gift","৳900","12 × 10 inch","কর্পোরেট গিফট।"],
+["Custom Gift","৳850","Custom","নিজের ডিজাইন অনুযায়ী।"],
+["Premium Gift","৳1200","14 × 10 inch","প্রিমিয়াম গিফট সেট।"],
+["Desk Gift","৳450","7 × 5 inch","ডেস্কে রাখার জন্য।"],
+["Greeting Gift","৳400","8 × 6 inch","শুভেচ্ছা উপহারের জন্য।"],
+["Special Gift","৳750","10 × 8 inch","বিশেষ অনুষ্ঠানের উপহার।"],
+["Memory Gift","৳650","9 × 7 inch","স্মৃতি ধরে রাখার জন্য।"],
+["Gift Box","৳500","10 × 8 inch","সুন্দর উপহার বক্স।"]
+
 ]
 },
+
+
+/* ================= WOOD ================= */
 
 {
 name:"🪵 কাঠের পণ্য",
+emoji:"🪵",
+
 products:[
-"কাঠের প্লেট",
-"কাঠের ট্রে",
-"কাঠের বক্স",
-"কাঠের ফ্রেম",
-"কাঠের ঘড়ি",
-"কাঠের নেমপ্লেট",
-"কাঠের স্ট্যান্ড",
-"কাঠের কলমদানি",
-"কাঠের টেবিল ডেকোর",
-"কাঠের স্মারক",
-"কাঠের ক্রেস্ট",
-"কাঠের অ্যাওয়ার্ড",
-"কাঠের গিফট",
-"কাঠের ওয়াল ডেকোর",
-"কাঠের কী-হোল্ডার",
-"কাঠের ফটোফ্রেম",
-"কাঠের ডেস্ক অর্গানাইজার",
-"কাঠের ফলক",
-"কাঠের মেডেল বক্স",
-"কাস্টম কাঠের পণ্য"
+
+["Wood Plate","৳450","10 inch","কাঠের সুন্দর প্লেট।"],
+["Wood Tray","৳650","14 × 10 inch","মজবুত কাঠের ট্রে।"],
+["Wood Box","৳600","10 × 8 inch","কাঠের গিফট বক্স।"],
+["Wood Frame","৳500","10 × 8 inch","ছবি রাখার কাঠের ফ্রেম।"],
+["Wood Clock","৳850","12 inch","কাঠের টেবিল ঘড়ি।"],
+["Wood Nameplate","৳450","12 × 4 inch","নাম ও লেখা দেওয়া যাবে।"],
+["Wood Stand","৳350","8 × 6 inch","ডেকোরেশন স্ট্যান্ড।"],
+["Wood Pen Holder","৳300","5 × 4 inch","কলম রাখার জন্য।"],
+["Wood Desk Decor","৳500","8 × 6 inch","ডেস্ক সাজানোর পণ্য।"],
+["Wood Memorial","৳700","10 × 8 inch","স্মারক হিসেবে ব্যবহারযোগ্য।"],
+["Wood Crest","৳750","10 × 8 inch","কাঠের ক্রেস্ট।"],
+["Wood Award","৳800","11 × 9 inch","কাঠের অ্যাওয়ার্ড।"],
+["Wood Gift","৳600","9 × 7 inch","কাঠের গিফট আইটেম।"],
+["Wood Wall Decor","৳900","16 × 10 inch","দেয়াল সাজানোর জন্য।"],
+["Wood Key Holder","৳450","10 × 5 inch","চাবি রাখার স্ট্যান্ড।"],
+["Wood Photo Frame","৳550","12 × 8 inch","কাঠের ফটোফ্রেম।"],
+["Wood Organizer","৳650","12 × 8 inch","ডেস্ক অর্গানাইজার।"],
+["Wood Plaque","৳700","12 × 9 inch","সম্মাননা ফলক।"],
+["Wood Medal Box","৳600","10 × 8 inch","মেডেল রাখার বক্স।"],
+["Custom Wood Product","৳900","Custom","নিজের ডিজাইন অনুযায়ী।"]
+
 ]
 },
+
+
+/* ================= AWARD ================= */
 
 {
 name:"🥇 অ্যাওয়ার্ড",
+emoji:"🥇",
+
 products:[
-"গোল্ড অ্যাওয়ার্ড",
-"সিলভার অ্যাওয়ার্ড",
-"ব্রোঞ্জ অ্যাওয়ার্ড",
-"মেটাল অ্যাওয়ার্ড",
-"গ্লাস অ্যাওয়ার্ড",
-"অ্যাক্রিলিক অ্যাওয়ার্ড",
-"স্কুল অ্যাওয়ার্ড",
-"কলেজ অ্যাওয়ার্ড",
-"স্পোর্টস অ্যাওয়ার্ড",
-"চ্যাম্পিয়ন অ্যাওয়ার্ড",
-"সেরা খেলোয়াড় অ্যাওয়ার্ড",
-"সেরা কর্মী অ্যাওয়ার্ড",
-"সম্মাননা অ্যাওয়ার্ড",
-"বিশেষ অ্যাওয়ার্ড",
-"প্রিমিয়াম অ্যাওয়ার্ড",
-"ইভেন্ট অ্যাওয়ার্ড",
-"কাস্টম অ্যাওয়ার্ড",
-"স্মারক অ্যাওয়ার্ড",
-"মিনি অ্যাওয়ার্ড",
-"ট্রফি অ্যাওয়ার্ড"
+
+["Gold Award","৳900","12 × 8 inch","গোল্ড ফিনিশিং অ্যাওয়ার্ড।"],
+["Silver Award","৳800","12 × 8 inch","সিলভার ফিনিশিং।"],
+["Bronze Award","৳750","11 × 8 inch","ব্রোঞ্জ ফিনিশিং।"],
+["Metal Award","৳850","12 × 8 inch","মজবুত মেটাল অ্যাওয়ার্ড।"],
+["Glass Award","৳1000","10 × 8 inch","গ্লাস ডিজাইন অ্যাওয়ার্ড।"],
+["Acrylic Award","৳850","10 × 8 inch","অ্যাক্রিলিক অ্যাওয়ার্ড।"],
+["School Award","৳650","9 × 7 inch","স্কুল অনুষ্ঠানের জন্য।"],
+["College Award","৳750","10 × 8 inch","কলেজ অনুষ্ঠানের জন্য।"],
+["Sports Award","৳800","11 × 8 inch","খেলাধুলার পুরস্কার।"],
+["Champion Award","৳1000","12 × 9 inch","চ্যাম্পিয়ন পুরস্কার।"],
+["Best Player Award","৳900","11 × 8 inch","সেরা খেলোয়াড়ের জন্য।"],
+["Best Worker Award","৳850","11 × 8 inch","সেরা কর্মীর সম্মাননা।"],
+["Honour Award","৳900","12 × 9 inch","বিশেষ সম্মাননার জন্য।"],
+["Special Award","৳1000","12 × 9 inch","বিশেষ অনুষ্ঠানের জন্য।"],
+["Premium Award","৳1300","14 × 10 inch","প্রিমিয়াম কোয়ালিটি।"],
+["Event Award","৳800","10 × 8 inch","ইভেন্ট পুরস্কার।"],
+["Custom Award","৳1100","Custom","নিজের ডিজাইন অনুযায়ী।"],
+["Memorial Award","৳950","12 × 9 inch","স্মারক অ্যাওয়ার্ড।"],
+["Mini Award","৳500","7 × 5 inch","ছোট অ্যাওয়ার্ড।"],
+["Trophy Award","৳1200","14 × 10 inch","ট্রফি স্টাইল অ্যাওয়ার্ড।"]
+
 ]
 },
 
+
+/* ================= BOX ================= */
+
 {
 name:"📦 বক্স",
+emoji:"📦",
+
 products:[
-"গিফট বক্স",
-"মেটাল বক্স",
-"কাঠের বক্স",
-"প্রিমিয়াম বক্স",
-"জুয়েলারি বক্স",
-"মেডেল বক্স",
-"ক্রেস্ট বক্স",
-"অ্যাওয়ার্ড বক্স",
-"কলম বক্স",
-"ঘড়ির বক্স",
-"কর্পোরেট বক্স",
-"কাস্টম বক্স",
-"লোগো বক্স",
-"স্মারক বক্স",
-"ছোট বক্স",
-"বড় বক্স",
-"ডাবল বক্স",
-"প্রেজেন্টেশন বক্স",
-"গিফট সেট বক্স",
-"বিশেষ বক্স"
+
+["Gift Box","৳400","10 × 8 inch","সুন্দর গিফট বক্স।"],
+["Metal Box","৳650","10 × 8 inch","মজবুত মেটাল বক্স।"],
+["Wood Box","৳600","10 × 8 inch","কাঠের তৈরি বক্স।"],
+["Premium Box","৳900","12 × 10 inch","প্রিমিয়াম ফিনিশিং।"],
+["Jewellery Box","৳750","8 × 6 inch","গয়না রাখার বক্স।"],
+["Medal Box","৳500","8 × 6 inch","মেডেল রাখার বক্স।"],
+["Crest Box","৳700","10 × 8 inch","ক্রেস্ট রাখার বক্স।"],
+["Award Box","৳800","12 × 9 inch","অ্যাওয়ার্ডের জন্য।"],
+["Pen Box","৳350","8 × 3 inch","কলম রাখার বক্স।"],
+["Watch Box","৳550","8 × 6 inch","ঘড়ির বক্স।"],
+["Corporate Box","৳900","12 × 10 inch","কর্পোরেট উপহারের জন্য।"],
+["Custom Box","৳800","Custom","নিজের ডিজাইন অনুযায়ী।"],
+["Logo Box","৳850","12 × 10 inch","লোগো বসানো যাবে।"],
+["Memorial Box","৳650","10 × 8 inch","স্মারক সংরক্ষণের জন্য।"],
+["Small Box","৳250","6 × 5 inch","ছোট বক্স।"],
+["Large Box","৳750","16 × 12 inch","বড় সাইজের বক্স।"],
+["Double Box","৳900","14 × 10 inch","ডাবল কম্পার্টমেন্ট।"],
+["Presentation Box","৳1000","14 × 10 inch","প্রেজেন্টেশনের জন্য।"],
+["Gift Set Box","৳850","12 × 10 inch","গিফট সেট রাখার জন্য।"],
+["Special Box","৳950","14 × 10 inch","বিশেষ ডিজাইনের বক্স।"]
+
 ]
-}];
-
-
-/* =========================================
-   CATEGORY IMAGE
-========================================= */
-
-const categoryImages = [
-
-"https://images.unsplash.com/photo-1569511166187-97eb6e387a94?auto=format&fit=crop&w=700&q=80",
-
-"https://images.unsplash.com/photo-1513883049090-d0b7439799bf?auto=format&fit=crop&w=700&q=80",
-
-"https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=700&q=80",
-
-"https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=700&q=80",
-
-"https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=700&q=80"
+}
 
 ];
-
-
-const productArea =
-document.getElementById("productArea");
 
 
 /* =========================================
    PRODUCTS SHOW
 ========================================= */
 
-categories.forEach((category,categoryIndex)=>{
+const productArea =
+document.getElementById("productArea");
+
+
+categories.forEach((category,catIndex)=>{
 
     const categoryBox =
     document.createElement("div");
@@ -1008,13 +971,9 @@ categories.forEach((category,categoryIndex)=>{
 
         <div class="category-title">
 
-            <h3>
-                ${category.name}
-            </h3>
+            <h3>${category.name}</h3>
 
-            <span>
-                ২০টি পণ্য
-            </span>
+            <span>২০টি Product</span>
 
         </div>
 
@@ -1027,7 +986,7 @@ categories.forEach((category,categoryIndex)=>{
     grid.className="product-grid";
 
 
-    category.products.forEach(product=>{
+    category.products.forEach((product,index)=>{
 
         const card =
         document.createElement("div");
@@ -1035,49 +994,53 @@ categories.forEach((category,categoryIndex)=>{
         card.className="product";
 
 
-        const image =
-        categoryImages[categoryIndex];
-
-
         card.innerHTML=`
 
-            <img
-            src="${image}"
-            alt="${product}"
-            onclick="showImage('${image}')"
-            >
+            <div class="product-photo">
+                ${category.emoji}
+            </div>
 
             <div class="product-info">
 
                 <h4>
-                    ${product}
+                    ${product[0]}
                 </h4>
 
-                <p>
-                    মানসম্মত ও আকর্ষণীয় পণ্য।
-                </p>
+                <div class="price">
+                    💰 ${product[1]}
+                </div>
+
+                <div class="size">
+                    📏 Size: ${product[2]}
+                </div>
+
+                <div class="details">
+                    📝 ${product[3]}
+                </div>
 
                 <div class="buttons">
 
                     <button
                     class="cart-btn"
-                    onclick="addToCart('${product}')">
+                    onclick="addToCart('${product[0]}')">
 
-                        🛒 কার্ট
+                    🛒 কার্ট
 
                     </button>
 
+
                     <button
                     class="order-btn"
-                    onclick="openOrder()">
+                    onclick="goOrder('${product[0]}')">
 
-                        অর্ডার
+                    📋 অর্ডার
 
                     </button>
 
                 </div>
 
             </div>
+
         `;
 
 
@@ -1103,7 +1066,28 @@ localStorage.getItem("zahidMetalCart")
 ) || [];
 
 
-function saveCart(){
+function addToCart(product){
+
+    cart.push(product);
+
+    localStorage.setItem(
+        "zahidMetalCart",
+        JSON.stringify(cart)
+    );
+
+    displayCart();
+
+    alert(
+        "✅ "+product+
+        " কার্টে যোগ হয়েছে!"
+    );
+
+}
+
+
+function removeCart(index){
+
+    cart.splice(index,1);
 
     localStorage.setItem(
         "zahidMetalCart",
@@ -1115,36 +1099,15 @@ function saveCart(){
 }
 
 
-function addToCart(product){
-
-    cart.push(product);
-
-    saveCart();
-
-    alert(
-        product +
-        " কার্টে যোগ করা হয়েছে!"
-    );
-
-}
-
-
-function removeFromCart(index){
-
-    cart.splice(index,1);
-
-    saveCart();
-
-}
-
-
 function displayCart(){
 
     const box =
     document.getElementById("cartItems");
 
+
     document.getElementById("cartCount")
     .textContent=cart.length;
+
 
     document.getElementById("totalItems")
     .textContent=cart.length;
@@ -1153,12 +1116,19 @@ function displayCart(){
     if(cart.length===0){
 
         box.innerHTML=`
-        <p style="text-align:center;color:#777">
-        আপনার কার্ট এখন খালি।
+
+        <p style="
+        text-align:center;
+        color:#777">
+
+        কার্ট এখন খালি।
+
         </p>
+
         `;
 
         return;
+
     }
 
 
@@ -1175,17 +1145,17 @@ function displayCart(){
 
         item.innerHTML=`
 
-            <span>
-                ${product}
-            </span>
+        <span>
+            ${product}
+        </span>
 
-            <button
-            class="remove"
-            onclick="removeFromCart(${index})">
+        <button
+        class="remove"
+        onclick="removeCart(${index})">
 
-                বাদ দিন
+        বাদ দিন
 
-            </button>
+        </button>
 
         `;
 
@@ -1201,39 +1171,12 @@ function displayCart(){
    ORDER
 ========================================= */
 
-function openOrder(){
+function goOrder(product){
 
-    document
-    .getElementById("order")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-}
-
-
-/* =========================================
-   IMAGE
-========================================= */
-
-function showImage(src){
-
-    document
-    .getElementById("bigImage")
-    .src=src;
-
-    document
-    .getElementById("modal")
-    .style.display="flex";
-
-}
-
-
-function closeImage(){
-
-    document
-    .getElementById("modal")
-    .style.display="none";
+    window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSfRaM8WR0K1rzPm37NlXuZrdBZF-a_UgFprh_RQFay0uUMYvw/viewform?usp=dialog",
+        "_blank"
+    );
 
 }
 
